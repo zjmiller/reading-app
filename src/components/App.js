@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import createEngagement from '../actions/createEngagement';
+import Engagement from './Engagement';
 import './App.css';
 
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
       <div className="App">
         <button  onClick={handleCreateEngagement} />
 				{ JSON.stringify(state) }
+				<Engagement />
       </div>
     );
   }
