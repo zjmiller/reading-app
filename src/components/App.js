@@ -1,21 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import createEngagement from '../actions/createEngagement';
 import './App.css';
 
 class App extends Component {
   render() {
-		const { test } = this.props;
+		const { handleCreateEngagement, state } = this.props;
 		
     return (
       <div className="App">
-        { test }
+        <button  onClick={handleCreateEngagement} />
+				{ JSON.stringify(state) }
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  test: state.words[0].word,
+  state,
 });
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => ({
+  handleCreateEngagement: () => console.log('h') || dispatch(createEngagement()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
