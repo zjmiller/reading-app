@@ -5,12 +5,12 @@ import WordAudioIcon from './WordAudioIcon';
 
 class Engagement extends Component {
   render() {
-		const { word } = this.props;
+		const { letters, word } = this.props;
 		
     return (
       <div>
 				<WordAudioIcon word={word} />
-				<LettersPool />
+				<LettersPool letters={letters} />
       </div>
     );
   }
@@ -20,9 +20,10 @@ const mapStateToProps = state => {
 	if (state.engagements.length === 0) return {};
 	const engagement = state.engagements[state.engagements.length - 1];
 	const word = state.words.find(word => word.id === engagement.wordId);
-	
+	const letters = engagement.lettersPool;
   return {
-		word: word,
+		letters,
+		word,
   };
 };
 
