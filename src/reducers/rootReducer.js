@@ -1,3 +1,6 @@
-export default function rootReducer(state = {test: 1}, action) {
-	return state;
-}
+import { combineReducers } from 'redux';
+import words from './words';
+
+export default combineReducers({
+	words,
+});

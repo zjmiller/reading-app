@@ -16,7 +16,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  test: state.test,
+  test: state.words[0].word,
 });
 
 export default connect(mapStateToProps)(App);
