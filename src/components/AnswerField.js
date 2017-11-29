@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Droppable } from 'react-beautiful-dnd';
 import { connect } from 'react-redux';
+import Letter from './Letter';
 
 class AnswerField extends Component {
   render() {
+		const { letters } = this.props;
+		
     return (
 			<div
 				style={{
@@ -12,7 +15,7 @@ class AnswerField extends Component {
 					width: '600px',
 				}}
 			>
-				<Droppable droppableId="answer-field">
+				<Droppable direction="horizontal" droppableId="answer-field">
 					{
 						(provided, snapshot) => (
 							<div
@@ -24,6 +27,9 @@ class AnswerField extends Component {
 									width: '600px',
 								}}
 							>
+								{
+									letters && letters.map((letter, i) => <Letter key={i} i={i} letter={letter} />)
+								}
 								{ provided.placeholder }
 							</div>	
 						)
@@ -35,8 +41,11 @@ class AnswerField extends Component {
 }
 
 const mapStateToProps = state => {
+	if (state.engagements.length === 0) return {};
+	const engagement = state.engagements[state.engagements.length - 1];
+	const letters = engagement.answerField.map(letterId => state.letters.find(letter => letter.id === letterId));
   return {
-
+		letters,
   };
 };
 

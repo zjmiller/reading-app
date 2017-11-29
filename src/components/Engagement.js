@@ -12,7 +12,7 @@ class Engagement extends Component {
       <div>
 				<WordAudioIcon word={word} />
 				<AnswerField />
-				<LettersPool letters={letters} />
+				<LettersPool />
       </div>
     );
   }

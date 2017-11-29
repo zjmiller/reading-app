@@ -2,14 +2,19 @@ import React, { Component } from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
 import { connect } from 'react-redux';
 import createEngagement from '../actions/createEngagement';
+import handleLetterDrop from '../actions/handleLetterDrop';
 import Engagement from './Engagement';
 
 class App extends Component {
   render() {
-		const { handleCreateEngagement, state } = this.props;
+		const {
+			handleCreateEngagement, 
+			onDragEndHandleLetterDrop,
+			state
+		} = this.props;
 		
     return (
-			<DragDropContext onDragEnd={() => {}}>
+			<DragDropContext onDragEnd={result => onDragEndHandleLetterDrop(result)}>
 	      <div
 					style={{
 						overflow: 'hidden',
@@ -30,7 +35,11 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleCreateEngagement: () => console.log('h') || dispatch(createEngagement()),
+  handleCreateEngagement: () => dispatch(createEngagement()),
+	onDragEndHandleLetterDrop: result => {
+	 	if (!result.destination) return; // dropped outside droppable
+		dispatch(handleLetterDrop(result))
+	},
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

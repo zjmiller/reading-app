@@ -1,4 +1,6 @@
+import shortid from 'shortid';
 import getRandomUpperCaseLetter from '../util/getRandomUpperCaseLetter';
+import createLetter from './createLetter';
 import getRandomWord from '../selectors/getRandomWord';
 import shuffleArray from '../util/shuffleArray';
 
@@ -15,10 +17,17 @@ export default function createEngagement() {
 		
 		lettersPool = shuffleArray(lettersPool);
 		
+		const letterIds = [];
+		lettersPool.forEach((letter, i) => {
+			const letterId = shortid.generate();
+			createLetter(dispatch, getState, letterId, letter);
+			letterIds[i] = letterId;
+		});
+		
 		dispatch({
 			type: 'CREATE_ENGAGEMENT',
 			wordId,
-			lettersPool,
+			lettersPool: letterIds,
 		});
 	}
 }

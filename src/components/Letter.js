@@ -6,9 +6,9 @@ import woodTextureUrl from '../assets/images/wood-texture.png';
 class Letter extends Component {
   render() {
 		const { i, letter } = this.props;
-		
+		console.log(letter);
     return (
-			<Draggable draggableId={`letter-${i}`}>
+			<Draggable draggableId={letter.id}>
 			{
 				(provided, snapshot) => (
 					<div>
@@ -40,7 +40,7 @@ class Letter extends Component {
 							}}
 								{...provided.dragHandleProps}
 							>
-								{ letter }
+								{ letter.letter }
 							</div>
 			      </div>	
 						{ provided.placeholder }
