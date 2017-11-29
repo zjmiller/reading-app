@@ -10,8 +10,13 @@ class App extends Component {
 		
     return (
 			<DragDropContext onDragEnd={() => {}}>
-	      <div>
-	        <button  onClick={handleCreateEngagement} />
+	      <div
+					style={{
+						overflow: 'hidden',
+						width: '100%',
+					}}
+				>
+	        <button onClick={handleCreateEngagement} />
 					{ JSON.stringify(state) }
 					<Engagement />
 	      </div>

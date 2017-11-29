@@ -5,22 +5,31 @@ import { connect } from 'react-redux';
 class AnswerField extends Component {
   render() {
     return (
-			<Droppable droppableId="answer-field">
-				{
-					(provided, snapshot) => (
-						<div
-							ref={provided.innerRef}
-							style={{
-								border: '1px solid gray',
-								height: '200px',
-								width: '600px',
-							}}
-						>
-							
-						</div>	
-					)
-				}
-			</Droppable>
+			<div
+				style={{
+					height: '200px',
+					margin: 'auto',
+					width: '600px',
+				}}
+			>
+				<Droppable droppableId="answer-field">
+					{
+						(provided, snapshot) => (
+							<div
+								ref={provided.innerRef}
+								style={{
+									borderBottom: '3px solid gray',
+									display: 'flex',
+									height: '60px',
+									width: '600px',
+								}}
+							>
+								{ provided.placeholder }
+							</div>	
+						)
+					}
+				</Droppable>
+			</div>
     );
   }
 }
