@@ -8,7 +8,8 @@ const settings = {
   infinite: true,
   speed: 500,
   slidesToShow: 1,
-  slidesToScroll: 1
+  slidesToScroll: 1,
+	swipe: true,
 };
 
 class Carousel extends Component {
@@ -43,7 +44,13 @@ class Carousel extends Component {
 									className="giphy-embed" 
 									allowFullScreen />
 								<p>
-									<a href={info.aHref}>via GIPHY</a>
+									<a 
+										href={info.aHref}
+										style={{
+											color: 'rgb(200, 200, 255)',
+											textDecoration: 'none',
+										}}
+									>via GIPHY</a>
 								</p>
 							</div>
 						))
