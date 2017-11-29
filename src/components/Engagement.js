@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AnswerField from './AnswerField';
+import Carousel from './Carousel';
 import EngagementBackground from './EngagementBackground';
 import LettersPool from './LettersPool';
 import WordAudioIcon from './WordAudioIcon';
@@ -18,9 +19,21 @@ class Engagement extends Component {
 	 					zIndex: 2,
 				 	}}
 				>
-				<WordAudioIcon word={word} />
-				<AnswerField />
-				<LettersPool />
+					<div
+						style={{
+							alignItems: 'center',
+							display: 'flex',
+							flexDirection: 'column',
+							justifyContent: 'center',
+						}}
+					>
+						<WordAudioIcon word={word} />
+						<div style={{ height: '20px' }}></div>
+						<Carousel />
+					</div>
+					<div style={{ height: '50px' }}></div>
+					<AnswerField />
+					<LettersPool />
 				</div>
       </div>
     );

@@ -21,8 +21,7 @@ class App extends Component {
 						width: '100%',
 					}}
 				>
-	        <button onClick={handleCreateEngagement} />
-					{ JSON.stringify(state) }
+	        <button onClick={handleCreateEngagement}>START</button>
 					<Engagement />
 	      </div>
 			</DragDropContext>

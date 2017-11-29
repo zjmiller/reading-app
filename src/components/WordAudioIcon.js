@@ -13,7 +13,15 @@ class WordAudioIcon extends Component {
       <div 
 				onClick={() => playAudio(word && word.audio)}
 				style={{
+					alignItems: 'center',
+					background: 'rgba(255, 255, 255, 0.75)',
+					boxShadow: '0 0 10px #000',
+					borderRadius: '40px',
+					display: 'flex',
+					height: '80px',
 					fontSize: '48px',
+					justifyContent: 'center',
+					width: '80px',
 				}}
 			>
         &#128266;

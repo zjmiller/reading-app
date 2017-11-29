@@ -10,7 +10,7 @@ class AnswerField extends Component {
     return (
 			<div
 				style={{
-					height: '200px',
+					height: '100px',
 					margin: 'auto',
 					width: '600px',
 				}}
@@ -25,7 +25,7 @@ class AnswerField extends Component {
 							>
 								<div
 									style={{
-										background: 'rgba(255, 255, 255, 0.75)',
+										background: snapshot.isDraggingOver ? 'rgba(230, 230, 255, 0.75)' : 'rgba(255, 255, 255, 0.75)',
 										boxShadow: '0 0 10px #666 inset',
 										position: 'absolute',
 											bottom: '-20px',
