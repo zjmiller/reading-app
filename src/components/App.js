@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { DragDropContext } from 'react-beautiful-dnd';
 import { connect } from 'react-redux';
 import createEngagement from '../actions/createEngagement';
 import Engagement from './Engagement';
@@ -9,11 +10,13 @@ class App extends Component {
 		const { handleCreateEngagement, state } = this.props;
 		
     return (
-      <div className="App">
-        <button  onClick={handleCreateEngagement} />
-				{ JSON.stringify(state) }
-				<Engagement />
-      </div>
+			<DragDropContext onDragEnd={() => {}}>
+	      <div className="App">
+	        <button  onClick={handleCreateEngagement} />
+					{ JSON.stringify(state) }
+					<Engagement />
+	      </div>
+			</DragDropContext>
     );
   }
 }
