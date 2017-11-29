@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AnswerField from './AnswerField';
+import EngagementBackground from './EngagementBackground';
 import LettersPool from './LettersPool';
 import WordAudioIcon from './WordAudioIcon';
 
@@ -10,9 +11,17 @@ class Engagement extends Component {
 		
     return (
       <div>
+				{letters && <EngagementBackground />}
+				<div
+				 	style={{
+					 	position: 'relative',
+	 					zIndex: 2,
+				 	}}
+				>
 				<WordAudioIcon word={word} />
 				<AnswerField />
 				<LettersPool />
+				</div>
       </div>
     );
   }

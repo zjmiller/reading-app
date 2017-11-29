@@ -1,6 +1,7 @@
 import shortid from 'shortid';
 import getRandomUpperCaseLetter from '../util/getRandomUpperCaseLetter';
 import createLetter from './createLetter';
+import backgroundImageSrc from '../assets/images/battleback10.png'
 import getRandomWord from '../selectors/getRandomWord';
 import shuffleArray from '../util/shuffleArray';
 
@@ -26,6 +27,7 @@ export default function createEngagement() {
 		
 		dispatch({
 			type: 'CREATE_ENGAGEMENT',
+			backgroundImageSrc,
 			wordId,
 			lettersPool: letterIds,
 		});

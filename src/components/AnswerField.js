@@ -19,19 +19,38 @@ class AnswerField extends Component {
 					{
 						(provided, snapshot) => (
 							<div
-								ref={provided.innerRef}
 								style={{
-									borderBottom: '3px solid gray',
-									display: 'flex',
-									height: '60px',
-									width: '600px',
+									position: 'relative',
 								}}
 							>
-								{
-									letters && letters.map((letter, i) => <Letter key={i} i={i} letter={letter} />)
-								}
-								{ provided.placeholder }
-							</div>	
+								<div
+									style={{
+										background: 'rgba(255, 255, 255, 0.75)',
+										boxShadow: '0 0 10px #666 inset',
+										position: 'absolute',
+											bottom: '-20px',
+											left: '-10px',
+											right: '-10px',
+											top: '-20px',
+										zIndex: 1,
+									}}
+								/>
+								<div
+									ref={provided.innerRef}
+									style={{
+										display: 'flex',
+										height: '50px',
+										position: 'relative',
+										width: '600px',
+										zIndex: 2,
+									}}
+								>
+									{
+										letters && letters.map((letter, i) => <Letter key={i} i={i} letter={letter} />)
+									}
+									{ provided.placeholder }
+								</div>	
+							</div>
 						)
 					}
 				</Droppable>
