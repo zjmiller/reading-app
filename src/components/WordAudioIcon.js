@@ -10,8 +10,13 @@ class WordAudioIcon extends Component {
 		const { word } = this.props;
 		
     return (
-      <div onClick={() => playAudio(word && word.audio)}>
-        press for audio
+      <div 
+				onClick={() => playAudio(word && word.audio)}
+				style={{
+					fontSize: '48px',
+				}}
+			>
+        &#128266;
       </div>
     );
   }
