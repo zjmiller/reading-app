@@ -3,7 +3,6 @@ import { DragDropContext } from 'react-beautiful-dnd';
 import { connect } from 'react-redux';
 import createEngagement from '../actions/createEngagement';
 import Engagement from './Engagement';
-import './App.css';
 
 class App extends Component {
   render() {
@@ -11,7 +10,7 @@ class App extends Component {
 		
     return (
 			<DragDropContext onDragEnd={() => {}}>
-	      <div className="App">
+	      <div>
 	        <button  onClick={handleCreateEngagement} />
 					{ JSON.stringify(state) }
 					<Engagement />
