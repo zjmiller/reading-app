@@ -1,5 +1,6 @@
 import addLetterToAnswer from './addLetterToAnswer';
 import rearrangeLettersInAnswer from './rearrangeLettersInAnswer';
+import rearrangeLettersInLetterPool from './rearrangeLettersInLetterPool';
 import removeLetterFromAnswer from './removeLetterFromAnswer';
 
 export default function handleLetterDrop(result) {
@@ -22,6 +23,12 @@ export default function handleLetterDrop(result) {
 			result.destination.droppableId === 'letters-pool'
 		) {
 			removeLetterFromAnswer(dispatch, getState, result);
+		} else if (
+			result.source.droppableId === 'letters-pool' 
+			&& 
+			result.destination.droppableId === 'letters-pool'
+		) {
+			rearrangeLettersInLetterPool(dispatch, getState, result);
 		}
 	};
 }

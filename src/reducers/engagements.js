@@ -78,5 +78,29 @@ export default function wordsReducers(state = initialState, action) {
 		});
 	}
 	
+	if (action.type === 'REARRANGE_LETTERS_IN_LETTERS_POOL') {
+		
+		let newLettersPool = state[state.length - 1].lettersPool.concat();
+		
+		if (action.sourceIndex === action.destinationIndex) return state;
+		
+		const tmp = newLettersPool[action.sourceIndex];
+		newLettersPool[action.sourceIndex] = newLettersPool[action.destinationIndex];
+		newLettersPool[action.destinationIndex] = tmp;
+		
+		return state.map((engagement, i) => {
+			if (i < state.length - 1) return engagement;
+			else {
+				return Object.assign(
+					{},
+					engagement,
+					{
+						lettersPool: newLettersPool,
+					}
+				);
+			}
+		});
+	}
+	
 	return state;
 }
