@@ -10,7 +10,6 @@ class App extends Component {
 		const {
 			handleCreateEngagement, 
 			onDragEndHandleLetterDrop,
-			state
 		} = this.props;
 		
     return (
@@ -30,7 +29,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  state,
+	
 });
 
 const mapDispatchToProps = dispatch => ({

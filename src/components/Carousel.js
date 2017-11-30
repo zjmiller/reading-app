@@ -37,6 +37,7 @@ class Carousel extends Component {
 										backgroundColor: '#000',
 										border: '5px solid #000',
 									}}
+									title="gif from Giphy"
 									src={`https://giphy.com/embed/${info.iframeSrc}`}
 									width={info.iframeWidth}
 									height={info.iframeHeight} 

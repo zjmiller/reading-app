@@ -5,8 +5,8 @@ import woodTextureUrl from '../assets/images/wood-texture.png';
 
 class Letter extends Component {
   render() {
-		const { i, letter } = this.props;
-		console.log(letter);
+		const { letter } = this.props;
+		
     return (
 			<Draggable draggableId={letter.id}>
 			{
@@ -24,20 +24,20 @@ class Letter extends Component {
 							})}
 						>
 							<div
-							style={{
-								alignItems: 'center',
-								backgroundImage: `url(${woodTextureUrl})`,
-								border: '3px solid #111',
-								borderRadius: '6px',
-								cursor: 'pointer',
-								display: 'flex',
-								height: '50px',
-								fontSize: '28px',
-								fontWeight: '700',
-								justifyContent: 'center',
-								margin: '0 10px',
-								width: '50px',
-							}}
+								style={{
+									alignItems: 'center',
+									backgroundImage: `url(${woodTextureUrl})`,
+									border: '3px solid #111',
+									borderRadius: '6px',
+									cursor: 'pointer',
+									display: 'flex',
+									height: '50px',
+									fontSize: '28px',
+									fontWeight: '700',
+									justifyContent: 'center',
+									margin: '0 10px',
+									width: '50px',
+								}}
 								{...provided.dragHandleProps}
 							>
 								{ letter.letter }
