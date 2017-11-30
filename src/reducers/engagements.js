@@ -32,5 +32,29 @@ export default function wordsReducers(state = initialState, action) {
 		})
 	}
 	
+	if (action.type === 'REARRANGE_LETTERS_IN_ANSWER_FIELD') {
+		
+		let newAnswerField = state[state.length - 1].answerField.concat();
+		
+		if (action.sourceIndex === action.destinationIndex) return state;
+		
+		const tmp = newAnswerField[action.sourceIndex];
+		newAnswerField[action.sourceIndex] = newAnswerField[action.destinationIndex];
+		newAnswerField[action.destinationIndex] = tmp;
+		
+		return state.map((engagement, i) => {
+			if (i < state.length - 1) return engagement;
+			else {
+				return Object.assign(
+					{},
+					engagement,
+					{
+						answerField: newAnswerField,
+					}
+				);
+			}
+		});
+	}
+	
 	return state;
 }
