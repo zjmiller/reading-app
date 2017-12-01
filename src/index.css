@@ -15,3 +15,48 @@ body {
 .modal-dialog {
 	width: 700px;
 }
+
+.flipcard {
+  position: relative;
+  -webkit-perspective: 1200px;
+          perspective: 1200px;
+}
+
+.flipcard--front, .flipcard--back {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: visibility .5s ease, -webkit-transform .5s ease;
+  transition: visibility .5s ease, -webkit-transform .5s ease;
+  transition: transform .5s ease, visibility .5s ease;
+  transition: transform .5s ease, visibility .5s ease, -webkit-transform .5s ease;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+}
+
+.flipcard--front {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+
+.flipcard--back {
+  visibility: hidden;
+  position: absolute;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.flipcard.is-flipped .flipcard--front {
+  visibility: hidden;
+  position: absolute;
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+.flipcard.is-flipped .flipcard--back {
+  visibility: visible;
+  position: static;
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}

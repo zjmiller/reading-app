@@ -4,6 +4,7 @@ import { Button, Modal } from 'react-bootstrap';
 
 import openChest from '../actions/openChest';
 import backgroundImageSrc from '../assets/images/battleback8.png';
+import blueGemImgSrc from '../assets/images/gemBlue.png';
 import cardBackImgSrc from '../assets/images/card-back.jpeg';
 import chestImgSrc from '../assets/images/chest.png';
 
@@ -13,14 +14,11 @@ class SuccessModal extends Component {
 		this.state = {
 			cardWidth: 0,
 			chestOpacity: 1,
+			testFlipped: false,
 		};
 	}
 	
 	componentWillReceiveProps(nextProps) {
-			if (this.props.isReceivingReward !== nextProps.isReceivingReward) {
-				setTimeout(() => this.setState({chestOpacity: 1}), 100);
-			}
-			
 			if (nextProps.receivingRewardState === 'CHEST_OPENED' && this.props.receivingRewardState !== nextProps.receivingRewardState) {
 				setTimeout(() => this.setState({cardWidth: 180}), 10);
 			}
@@ -35,7 +33,7 @@ class SuccessModal extends Component {
 		
     return (
       <div>
-				<Modal show={isReceivingReward} style={{ backgroundColor: 'rgba(0, 0, 0, 0.75)' }}>
+				<Modal show={isReceivingReward}>
 					<Modal.Body 
 						style={{
 							alignItems: 'center',
@@ -64,20 +62,43 @@ class SuccessModal extends Component {
 							receivingRewardState === 'CHEST_OPENED'
 							&&
 							[
-								<img
-									key="1"
-									src={cardBackImgSrc}
-									style={{
-										border: '2px solid #333',
-										borderRadius: '8px',
-										boxShadow: '0px 0px 5px #333',
-										cursor: 'pointer',
-										marginLeft: '20px',
-										marginRight: '20px',
-										transition: 'width 0.4s cubic-bezier(1,.46,.41,1.46)',
-										width: `${this.state.cardWidth}px`,
-									}} 
-								/>,
+								<div className={this.state.testFlipped ? 'flipcard is-flipped' : 'flipcard'} key="1">
+									<div className="flipcard--front">
+										<img
+											onClick={() => this.setState({ testFlipped: true })}
+											src={cardBackImgSrc}
+											style={{
+												border: '2px solid #333',
+												borderRadius: '8px',
+												boxShadow: '0px 0px 5px #333',
+												cursor: 'pointer',
+												height: `${217*(this.state.cardWidth/180)}px`,
+												marginLeft: '20px',
+												marginRight: '20px',
+												transition: 'height 0.4s cubic-bezier(1,.46,.41,1.46), width 0.4s cubic-bezier(1,.46,.41,1.46)',
+												width: `${this.state.cardWidth}px`,
+											}} 
+										/>
+									</div>
+									<div
+										className="flipcard--back"
+										style={{
+											alignItems: 'center',
+											backgroundColor: '#f5f5dc',
+											border: '2px solid #333',
+											borderRadius: '8px',
+											boxShadow: '0px 0px 5px #333',
+											display: 'flex',
+											marginLeft: '20px',
+											marginRight: '20px',
+											height: `${217*(this.state.cardWidth/180)}px`,
+											justifyContent: 'center',
+											width: `${this.state.cardWidth}px`,
+										}}
+									>
+										<img src={blueGemImgSrc} />
+									</div>
+								</div>,
 								<img
 									key="2"
 									src={cardBackImgSrc}
