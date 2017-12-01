@@ -4,6 +4,7 @@ import AnswerField from './AnswerField';
 import Carousel from './Carousel';
 import EngagementBackground from './EngagementBackground';
 import LettersPool from './LettersPool';
+import Modal from './Modal';
 import WordAudioIcon from './WordAudioIcon';
 
 class Engagement extends Component {
@@ -34,6 +35,7 @@ class Engagement extends Component {
 					<div style={{ height: '50px' }}></div>
 					<AnswerField />
 					<LettersPool />
+					<Modal />
 				</div>
       </div>
     );
