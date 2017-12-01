@@ -23,15 +23,18 @@ class Carousel extends Component {
 				?
 				<Slider {...settings}>
 					{
-						(giphyEmbeds || []).map(info => (
-							<div style={{
-								alignItems: 'center',
-								background: '#000',
-								display: 'flex',
-								flexDirection: 'column',
-								justifyContent: 'center',
-								padding: '20px',
-							}}>
+						(giphyEmbeds || []).map((info, i) => (
+							<div 
+								key={i}
+								style={{
+									alignItems: 'center',
+									background: '#000',
+									display: 'flex',
+									flexDirection: 'column',
+									justifyContent: 'center',
+									padding: '20px',
+								}}
+							>
 								<iframe 
 									style={{
 										backgroundColor: '#000',
