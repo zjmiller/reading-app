@@ -20,6 +20,17 @@ export default function sessionReducer(state = initialState, action) {
 			state,
 			{
 				engagementState: 'RECEIVING_REWARD',
+				receivingRewardState: 'CHEST_APPEARING'
+			}
+		);
+	}
+	
+	if (action.type === 'OPEN_CHEST') {
+		return Object.assign(
+			{},
+			state,
+			{
+				receivingRewardState: 'CHEST_OPENED',
 			}
 		);
 	}
