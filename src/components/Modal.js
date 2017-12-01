@@ -11,9 +11,6 @@ class SuccessModal extends Component {
     return (
       <div>
 			<Modal show={isReceivingReward}>
-				<Modal.Header>
-					<Modal.Title>Modal heading</Modal.Title>
-				</Modal.Header>
 				<Modal.Body>
 					<img src={chestImgSrc} style={{ width: '100%' }} />
 				</Modal.Body>
