@@ -6,10 +6,12 @@ import chestImgSrc from '../assets/images/chest.jpg';
 
 class SuccessModal extends Component {
   render() {
+		const { isReceivingReward } = this.props;
+		
     return (
       <div>
-			<Modal show={false} onHide={_ => alert()}>
-				<Modal.Header closeButton>
+			<Modal show={isReceivingReward}>
+				<Modal.Header>
 					<Modal.Title>Modal heading</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>

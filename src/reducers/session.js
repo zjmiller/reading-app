@@ -9,6 +9,17 @@ export default function sessionReducer(state = initialState, action) {
 			state,
 			{
 				inEngagement: action.engagementId,
+				engagementState: 'ANSWERING',
+			}
+		);
+	}
+	
+	if (action.type === 'SUCCESSFUL_ENGAGEMENT') {
+		return Object.assign(
+			{},
+			state,
+			{
+				engagementState: 'RECEIVING_REWARD',
 			}
 		);
 	}

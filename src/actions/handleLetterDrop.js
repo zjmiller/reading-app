@@ -1,4 +1,5 @@
 import addLetterToAnswer from './addLetterToAnswer';
+import checkIfAnswerCorrect from './checkIfAnswerCorrect';
 import rearrangeLettersInAnswer from './rearrangeLettersInAnswer';
 import rearrangeLettersInLetterPool from './rearrangeLettersInLetterPool';
 import removeLetterFromAnswer from './removeLetterFromAnswer';
@@ -30,5 +31,7 @@ export default function handleLetterDrop(result) {
 		) {
 			rearrangeLettersInLetterPool(dispatch, getState, result);
 		}
+		
+		checkIfAnswerCorrect(dispatch, getState);
 	};
 }

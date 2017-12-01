@@ -9,7 +9,11 @@ import WordAudioIcon from './WordAudioIcon';
 
 class Engagement extends Component {
   render() {
-		const { letters, word } = this.props;
+		const {
+			letters,
+			isReceivingReward,
+			word,
+		} = this.props;
 		
     return (
       <div>
@@ -35,7 +39,7 @@ class Engagement extends Component {
 					<div style={{ height: '50px' }}></div>
 					<AnswerField />
 					<LettersPool />
-					<Modal />
+					<Modal isReceivingReward={isReceivingReward} />
 				</div>
       </div>
     );
@@ -47,6 +51,7 @@ const mapStateToProps = state => {
 	const word = state.words.find(word => word.id === engagement.wordId);
 	const letters = engagement.lettersPool;
   return {
+		isReceivingReward: state.session.engagementState === 'RECEIVING_REWARD',
 		letters,
 		word,
   };
