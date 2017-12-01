@@ -66,7 +66,6 @@ class Carousel extends Component {
 }
 
 const mapStateToProps = state => {
-	if (state.engagements.length === 0) return {};
 	const engagement = state.engagements[state.engagements.length - 1];
 	const word = state.words.find(word => word.id === engagement.wordId);
 	return {

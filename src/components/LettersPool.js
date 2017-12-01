@@ -32,7 +32,6 @@ class LettersPool extends Component {
 }
 
 const mapStateToProps = state => {
-	if (state.engagements.length === 0) return {};
 	const engagement = state.engagements[state.engagements.length - 1];
 	const letters = engagement.lettersPool.map(letterId => state.letters.find(letter => letter.id === letterId));
 	

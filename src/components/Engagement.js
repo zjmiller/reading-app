@@ -13,7 +13,7 @@ class Engagement extends Component {
 		
     return (
       <div>
-				{letters && <EngagementBackground />}
+				<EngagementBackground />
 				<div
 				 	style={{
 					 	position: 'relative',
@@ -43,7 +43,6 @@ class Engagement extends Component {
 }
 
 const mapStateToProps = state => {
-	if (state.engagements.length === 0) return {};
 	const engagement = state.engagements[state.engagements.length - 1];
 	const word = state.words.find(word => word.id === engagement.wordId);
 	const letters = engagement.lettersPool;

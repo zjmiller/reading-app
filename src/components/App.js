@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
 import { connect } from 'react-redux';
-import createEngagement from '../actions/createEngagement';
+import createAndEnterEngagement from '../actions/createAndEnterEngagement';
 import handleLetterDrop from '../actions/handleLetterDrop';
 import Engagement from './Engagement';
 
 class App extends Component {
   render() {
 		const {
-			handleCreateEngagement, 
+			currentlyInEngagement,
+			handleCreateAndEnterEngagement, 
 			onDragEndHandleLetterDrop,
 		} = this.props;
 		
@@ -20,8 +21,8 @@ class App extends Component {
 						width: '100%',
 					}}
 				>
-	        <button onClick={handleCreateEngagement}>START</button>
-					<Engagement />
+	        <button onClick={handleCreateAndEnterEngagement}>START</button>
+					{currentlyInEngagement && <Engagement />}
 	      </div>
 			</DragDropContext>
     );
@@ -29,11 +30,11 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-	
+	currentlyInEngagement: !!state.session.inEngagement,
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleCreateEngagement: () => dispatch(createEngagement()),
+  handleCreateAndEnterEngagement: () => dispatch(createAndEnterEngagement()),
 	onDragEndHandleLetterDrop: result => {
 	 	if (!result.destination) return; // dropped outside droppable
 		dispatch(handleLetterDrop(result))

@@ -5,7 +5,7 @@ import backgroundImageSrc from '../assets/images/battleback10.png'
 import getRandomWord from '../selectors/getRandomWord';
 import shuffleArray from '../util/shuffleArray';
 
-export default function createEngagement() {
+export default function createEngagement(engagementId) {
 	return (dispatch, getState) => {
 		const word = getRandomWord(getState());
 		const wordId = word.id;
@@ -27,6 +27,7 @@ export default function createEngagement() {
 		
 		dispatch({
 			type: 'CREATE_ENGAGEMENT',
+			id: engagementId,
 			backgroundImageSrc,
 			wordId,
 			lettersPool: letterIds,

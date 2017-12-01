@@ -3,6 +3,7 @@ const initialState = [];
 export default function wordsReducers(state = initialState, action) {
 	if (action.type === 'CREATE_ENGAGEMENT') {
 		return state.concat({
+			id: action.id,
 			answerField: [],
 			backgroundImageSrc: action.backgroundImageSrc,
 			lettersPool: action.lettersPool,
