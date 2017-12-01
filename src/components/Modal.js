@@ -70,7 +70,7 @@ class SuccessModal extends Component {
 									style={{
 										border: '2px solid #333',
 										borderRadius: '8px',
-										boxShadow: '0px 0px 25px 5px white',
+										boxShadow: '0px 0px 5px #333',
 										cursor: 'pointer',
 										marginLeft: '20px',
 										marginRight: '20px',
@@ -84,7 +84,7 @@ class SuccessModal extends Component {
 									style={{
 										border: '2px solid #333',
 										borderRadius: '8px',
-										boxShadow: '0px 0px 25px 5px white',
+										boxShadow: '0px 0px 5px #333',
 										cursor: 'pointer',
 										marginLeft: '20px',
 										marginRight: '20px',
@@ -98,7 +98,7 @@ class SuccessModal extends Component {
 									style={{
 										border: '2px solid #333',
 										borderRadius: '8px',
-										boxShadow: '0px 0px 25px 5px white',
+										boxShadow: '0px 0px 5px #333',
 										cursor: 'pointer',
 										marginLeft: '20px',
 										marginRight: '20px',
