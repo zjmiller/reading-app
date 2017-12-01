@@ -11,3 +11,7 @@ body {
 .slick-prev:before, .slick-next:before {
 	color: black;
 }
+
+.modal-dialog {
+	width: 700px;
+}

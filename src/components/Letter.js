@@ -17,9 +17,10 @@ class Letter extends Component {
 							style={Object.assign({}, provided.draggableStyle, {
 								alignItems: 'center',
 								display: 'flex',
-								height: '50px',
+								height: '90px',
 								fontWeight: '700',
 								justifyContent: 'center',
+								userSelect: 'none',
 								width: '70px',
 							})}
 						>

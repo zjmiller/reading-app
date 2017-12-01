@@ -29,10 +29,10 @@ class AnswerField extends Component {
 										border: '1px solid #333',
 										boxShadow: '0 0 15px #333 inset',
 										position: 'absolute',
-											bottom: '-20px',
+											bottom: '0px',
 											left: '-10px',
 											right: '-10px',
-											top: '-20px',
+											top: '0px',
 										zIndex: 1,
 									}}
 								/>
@@ -40,7 +40,7 @@ class AnswerField extends Component {
 									ref={provided.innerRef}
 									style={{
 										display: 'flex',
-										height: '50px',
+										height: '90px',
 										position: 'relative',
 										width: '600px',
 										zIndex: 2,
