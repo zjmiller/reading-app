@@ -1,9 +1,12 @@
 import shortid from 'shortid';
 
 export default function createRewardCard(rewardCardId) {
-	dispatch({
-		id: rewardCardId,
-		type: 'BLUE_GEM',
-		quantity: 3,
-	});
+	return (dispatch, getState) => {
+		dispatch({
+			type: 'CREATE_REWARD_CARD',
+			id: rewardCardId,
+			rewardType: 'BLUE_GEM',
+			quantity: 3,
+		});
+	};
 }

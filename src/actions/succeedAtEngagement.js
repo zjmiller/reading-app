@@ -1,8 +1,10 @@
+import shortid from 'shortid';
 import createChest from './createChest';
 
 export default function succeedAtEngagement() {
 	return (dispatch, getState) => {
-		dispatch(createChest());
+		const chestId = shortid.generate();
+		dispatch(createChest(chestId));
 		dispatch({
 			type: 'SUCCESSFUL_ENGAGEMENT',
 		});
