@@ -11,25 +11,25 @@ export default function handleLetterDrop(result) {
 			&& 
 			result.destination.droppableId === 'answer-field'
 		) {
-			addLetterToAnswer(dispatch, getState, result);
+			dispatch(addLetterToAnswer(result));
 		} else if (
 			result.source.droppableId === 'answer-field' 
 			&& 
 			result.destination.droppableId === 'answer-field'
 		) {
-			rearrangeLettersInAnswer(dispatch, getState, result);
+			dispatch(rearrangeLettersInAnswer(result));
 		} else if (
 			result.source.droppableId === 'answer-field' 
 			&& 
 			result.destination.droppableId === 'letters-pool'
 		) {
-			removeLetterFromAnswer(dispatch, getState, result);
+			dispatch(removeLetterFromAnswer(result));
 		} else if (
 			result.source.droppableId === 'letters-pool' 
 			&& 
 			result.destination.droppableId === 'letters-pool'
 		) {
-			rearrangeLettersInLetterPool(dispatch, getState, result);
+			dispatch(rearrangeLettersInLetterPool(result));
 		}
 		
 		dispatch(checkIfAnswerCorrect());
