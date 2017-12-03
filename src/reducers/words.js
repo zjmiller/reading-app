@@ -89,6 +89,41 @@ const initialState = [
 			},
 		],
 	},
+	
+	{
+		id: shortid.generate(),
+		word: 'pig',
+		audio: catAudioUrl,
+		giphyEmbeds: [
+			{
+				iframeSrc: 'WsVJuYCz6qgJG',
+				iframeWidth: '480',
+				iframeHeight: '276',
+				aHref: 'https://giphy.com/gifs/cute-video-animal-WsVJuYCz6qgJG',
+			},
+			
+			{
+				iframeSrc: '5odBbOYQN3UaY',
+				iframeWidth: '480',
+				iframeHeight: '270',
+				aHref: 'https://giphy.com/gifs/pig-little-piggeeehh-5odBbOYQN3UaY',
+			},
+
+			{
+				iframeSrc: 'HV6uVZWJDJ42c',
+				iframeWidth: '480',
+				iframeHeight: '270',
+				aHref: 'https://giphy.com/gifs/swimming-pig-HV6uVZWJDJ42c',
+			},
+			
+			{
+				iframeSrc: 'E5TVttEnaz4ME',
+				iframeWidth: '480',
+				iframeHeight: '270',
+				aHref: 'https://giphy.com/gifs/E5TVttEnaz4ME',
+			},
+		],
+	},
 ];
 
 export default function wordsReducers(state = initialState, action) {
