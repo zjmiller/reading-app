@@ -32,6 +32,6 @@ export default function handleLetterDrop(result) {
 			rearrangeLettersInLetterPool(dispatch, getState, result);
 		}
 		
-		checkIfAnswerCorrect(dispatch, getState);
+		dispatch(checkIfAnswerCorrect());
 	};
 }

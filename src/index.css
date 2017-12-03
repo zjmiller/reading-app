@@ -16,6 +16,10 @@ body {
 	width: 700px;
 }
 
+.modal-backdrop.in {
+	opacity: 0.55;
+}
+
 .flipcard {
   position: relative;
   -webkit-perspective: 1200px;
@@ -59,4 +63,23 @@ body {
   position: static;
   -webkit-transform: rotateY(0deg);
           transform: rotateY(0deg);
+}
+
+
+.gold {
+  animation: goldPulse 1s infinite;
+	animation-direction: alternate;
+	animation-timing-function: cubic-bezier(1,.25,.66,1);
+}
+
+@keyframes goldPulse {
+  0% {
+		
+    filter: brightness(100%) saturate(100%);
+		transform: scale(1, 1);
+  }
+  100% {
+		filter: brightness(110%) saturate(400%);
+		transform: scale(1.02, 1.02);
+  }
 }
