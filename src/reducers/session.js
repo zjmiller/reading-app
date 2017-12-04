@@ -5,7 +5,8 @@ const initialState = {
 		'BLUE_GEM': 0,
 		'GREEN_GEM': 0,
 		'RED_GEM': 0,
-	}
+	},
+	wordsSoFar: [],
 };
 
 export default function sessionReducer(state = initialState, action) {
@@ -17,6 +18,7 @@ export default function sessionReducer(state = initialState, action) {
 				inEngagement: action.engagementId,
 				engagementState: 'ANSWERING',
 				receivingRewardState: false,
+				wordsSoFar: state.wordsSoFar.concat(action.word),
 			}
 		);
 	}
