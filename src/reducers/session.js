@@ -16,6 +16,7 @@ export default function sessionReducer(state = initialState, action) {
 			{
 				inEngagement: action.engagementId,
 				engagementState: 'ANSWERING',
+				receivingRewardState: false,
 			}
 		);
 	}
@@ -26,7 +27,7 @@ export default function sessionReducer(state = initialState, action) {
 			state,
 			{
 				engagementState: 'RECEIVING_REWARD',
-				receivingRewardState: 'CHEST_APPEARING'
+				receivingRewardState: 'CHEST_APPEARING',
 			}
 		);
 	}

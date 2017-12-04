@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button, Modal } from 'react-bootstrap';
 
+import closeRewardModal from '../actions/closeRewardModal';
 import backgroundImageSrc from '../assets/images/battleback8.png';
 import areAllRewardCardsRevealed from '../selectors/areAllRewardCardsRevealed';
 
@@ -13,7 +14,6 @@ class SuccessModal extends Component {
 		super(props);
 		this.state = {
 			cardWidth: 0,
-			modalShowing: true,
 			testFlipped: false,
 		};
 	}
@@ -24,22 +24,26 @@ class SuccessModal extends Component {
 		}
 	}
 	
-	closeModal = () => {
-		this.setState({
-			modalShowing: false,
-		});
+	handleHideRewardModal = () => {
+		if (this.props.areAllRewardCardsRevealed) {
+			this.props.handleCloseRewardModal();
+			this.setState({
+				cardWidth: 0,
+			});
+		}
 	}
 	
   render() {
 		const {
 			areAllRewardCardsRevealed,
+			handleCloseRewardModal,
 			isReceivingReward,
 			receivingRewardState,
 		} = this.props;
 		
     return (
       <div>
-				<Modal show={isReceivingReward && this.state.modalShowing} onHide={() => areAllRewardCardsRevealed && this.closeModal()}>
+				<Modal show={isReceivingReward} onHide={this.handleHideRewardModal}>
 					<Modal.Body 
 						style={{
 							alignItems: 'center',
@@ -75,4 +79,8 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(SuccessModal);
+const mapDispatchToProps = dispatch => ({
+  handleCloseRewardModal: () => dispatch(closeRewardModal()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SuccessModal);
