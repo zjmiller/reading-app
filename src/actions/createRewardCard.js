@@ -29,7 +29,7 @@ export default function createRewardCard(rewardCardId, isPremium) {
 		
 		let quantity;
 		if (rewardType === 'GOLD_COIN') {
-			if (isPremium) quantity = Math.ceil(Math.random() * 3) * 100;
+			if (isPremium) quantity = 100;
 			else quantity = Math.ceil(Math.random() * 10);
 		} else {
 			if (isPremium) quantity = 3;
