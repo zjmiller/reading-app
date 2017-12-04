@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import speakerIconImgSrc from '../assets/images/speaker-icon.svg';
+
 function playAudio(url) {
 	const audio = new Audio(url);
 	audio.play();
@@ -14,17 +16,18 @@ class WordAudioIcon extends Component {
 				onClick={() => playAudio(word && word.audio)}
 				style={{
 					alignItems: 'center',
-					background: 'rgba(255, 255, 255, 0.95)',
+					background: 'rgba(250, 250, 251, 0.95)',
 					boxShadow: '0 0 10px #000',
-					borderRadius: '40px',
+					borderRadius: '30px',
+					cursor: 'pointer',
 					display: 'flex',
-					height: '80px',
-					fontSize: '48px',
+					height: '60px',
 					justifyContent: 'center',
-					width: '80px',
+					userSelect: 'none',
+					width: '60px',
 				}}
 			>
-        &#128266;
+        <img src={speakerIconImgSrc} style={{ width: '40px' }}/>
       </div>
     );
   }
