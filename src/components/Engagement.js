@@ -36,7 +36,7 @@ class Engagement extends Component {
 						<div style={{ height: '20px' }}></div>
 						<Carousel />
 					</div>
-					<div style={{ height: '50px' }}></div>
+					<div style={{ height: '30px' }}></div>
 					<AnswerField />
 					<LettersPool />
 					<Modal />
