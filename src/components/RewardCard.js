@@ -13,7 +13,6 @@ class RewardCard extends Component {
 		super(props);
 		this.state = {
 			isFlipped: false,
-			cardWidth: 180,
 		}
 	}
 	
@@ -41,11 +40,11 @@ class RewardCard extends Component {
 							borderRadius: '8px',
 							boxShadow: '0px 0px 5px #333',
 							cursor: 'pointer',
-							height: `${217*(this.state.cardWidth/180)}px`,
+							height: `${217*(this.props.cardWidth/180)}px`,
 							marginLeft: '20px',
 							marginRight: '20px',
 							transition: 'height 0.4s cubic-bezier(1,.46,.41,1.46), width 0.4s cubic-bezier(1,.46,.41,1.46)',
-							width: `${this.state.cardWidth}px`,
+							width: `${this.props.cardWidth}px`,
 						}} 
 					/>
 				</div>
@@ -61,9 +60,9 @@ class RewardCard extends Component {
 						flexDirection: 'column',
 						marginLeft: '20px',
 						marginRight: '20px',
-						height: `${217*(this.state.cardWidth/180)}px`,
+						height: `${217*(this.props.cardWidth/180)}px`,
 						justifyContent: 'center',
-						width: `${this.state.cardWidth}px`,
+						width: `${this.props.cardWidth}px`,
 					}}
 				>
 				

@@ -18,7 +18,13 @@ class RewardCards extends Component {
 				}}
 			>
         {
-					[rewardCards.map(rewardCard => <RewardCard key={rewardCard.id} rewardCard={rewardCard}/>)]
+					[rewardCards.map(rewardCard => 
+						<RewardCard
+							cardWidth={this.props.cardWidth}
+							key={rewardCard.id}
+							rewardCard={rewardCard}
+						/>
+					)]
 				}
       </div>
     );

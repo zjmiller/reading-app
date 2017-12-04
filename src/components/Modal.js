@@ -49,7 +49,7 @@ class SuccessModal extends Component {
 						{
 							receivingRewardState === 'CHEST_OPENED'
 							&&
-							<RewardCards />
+							<RewardCards cardWidth={this.state.cardWidth} />
 						}
 					</Modal.Body>
 				</Modal>
