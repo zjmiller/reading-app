@@ -7,6 +7,10 @@ import Engagement from './Engagement';
 import Wealth from './Wealth';
 
 class App extends Component {
+	componentDidMount() {
+		this.props.handleCreateAndEnterEngagement();
+	}
+	
   render() {
 		const {
 			currentlyInEngagement,
@@ -19,11 +23,11 @@ class App extends Component {
 	      <div
 					style={{
 						overflow: 'hidden',
+						paddingTop: '15px',
 						width: '100%',
 					}}
 				>
 					<Wealth />
-	        <button onClick={handleCreateAndEnterEngagement}>START</button>
 					{currentlyInEngagement && <Engagement />}
 	      </div>
 			</DragDropContext>

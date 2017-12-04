@@ -17,7 +17,7 @@ class Carousel extends Component {
 		const { giphyEmbeds } = this.props;
 		
     return (
-			<div style={{ width: '600px'}}>
+			<div style={{ width: '500px'}}>
 			{
 				giphyEmbeds
 				?
