@@ -2,31 +2,28 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button, Modal } from 'react-bootstrap';
 
-import openChest from '../actions/openChest';
 import backgroundImageSrc from '../assets/images/battleback8.png';
 import blueGemImgSrc from '../assets/images/gemBlue.png';
 import cardBackImgSrc from '../assets/images/card-back.jpeg';
-import chestImgSrc from '../assets/images/chest.png';
+import Chest from './Chest';
 
 class SuccessModal extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			cardWidth: 0,
-			chestOpacity: 1,
 			testFlipped: false,
 		};
 	}
 	
 	componentWillReceiveProps(nextProps) {
-			if (nextProps.receivingRewardState === 'CHEST_OPENED' && this.props.receivingRewardState !== nextProps.receivingRewardState) {
-				setTimeout(() => this.setState({cardWidth: 180}), 10);
-			}
+		if (nextProps.receivingRewardState === 'CHEST_OPENED' && this.props.receivingRewardState !== nextProps.receivingRewardState) {
+			setTimeout(() => this.setState({cardWidth: 180}), 10);
+		}
 	}
 	
   render() {
 		const {
-			handleOpenChest,
 			isReceivingReward,
 			receivingRewardState,
 		} = this.props;
@@ -47,16 +44,7 @@ class SuccessModal extends Component {
 						{
 							receivingRewardState === 'CHEST_APPEARING'
 							&&
-							<img
-								onClick={handleOpenChest}
-								src={chestImgSrc}
-								style={{
-									cursor: 'pointer',
-									opacity: this.state.chestOpacity,
-									transition: 'opacity 0.4s',
-									width: '100%',
-								}} 
-							/>
+							<Chest />
 						}
 						{
 							receivingRewardState === 'CHEST_OPENED'
@@ -151,8 +139,4 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => ({
-  handleOpenChest: () => dispatch(openChest()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(SuccessModal);
+export default connect(mapStateToProps)(SuccessModal);

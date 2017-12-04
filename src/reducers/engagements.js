@@ -11,6 +11,21 @@ export default function wordsReducers(state = initialState, action) {
 		});
 	}
 	
+	if (action.type === 'CREATE_CHEST') {
+		console.log('HERE 1', action)
+		return state.map(engagement => {
+			if (engagement.id !== action.engagementId) return engagement;
+			console.log('HERE 2')
+			return Object.assign(
+				{},
+				engagement,
+				{
+					chestId: action.id,
+				}
+			);
+		});
+	}
+	
 	if (action.type === 'MOVE_LETTER_FROM_POOL_TO_ANSWER_FIELD') {
 		let newLettersPool = state[state.length - 1].lettersPool.concat();
 		let newAnswerField = state[state.length - 1].answerField.concat();
