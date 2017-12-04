@@ -180,6 +180,132 @@ const initialState = [
 			},
 		],
 	},
+	
+	{
+		id: shortid.generate(),
+		word: 'frog',
+		audio: catAudioUrl,
+		giphyEmbeds: [
+			{
+				iframeSrc: 'ytAW7lMP77p5e',
+				iframeWidth: '480',
+				iframeHeight: '270',
+				aHref: 'https://giphy.com/gifs/bbc-frog-amphibian-ytAW7lMP77p5e',
+			},
+			
+			{
+				iframeSrc: '4N4JBFo45PVPa',
+				iframeWidth: '480',
+				iframeHeight: '258',
+				aHref: 'https://giphy.com/gifs/tongue-frog-insect-4N4JBFo45PVPa',
+			},
+		],
+	},
+	
+	{
+		id: shortid.generate(),
+		word: 'sun',
+		audio: catAudioUrl,
+		giphyEmbeds: [
+			{
+				iframeSrc: '3ogwG0cKu7x87xU6VG',
+				iframeWidth: '480',
+				iframeHeight: '386',
+				aHref: 'https://giphy.com/gifs/feistmusic-century-feist-3ogwG0cKu7x87xU6VG',
+			},
+		],
+	},
+	
+	{
+		id: shortid.generate(),
+		word: 'run',
+		audio: catAudioUrl,
+		giphyEmbeds: [
+			{
+				iframeSrc: 'l2Sqc3POpzkj5r8SQ',
+				iframeWidth: '480',
+				iframeHeight: '201',
+				aHref: 'https://giphy.com/gifs/run-forrest-gump-l2Sqc3POpzkj5r8SQ',
+			},
+		],
+	},
+	
+	{
+		id: shortid.generate(),
+		word: 'jump',
+		audio: catAudioUrl,
+		giphyEmbeds: [
+			{
+				iframeSrc: 'l2JJIfI6nUkm5AzoQ',
+				iframeWidth: '480',
+				iframeHeight: '240',
+				aHref: 'https://giphy.com/gifs/l2JJIfI6nUkm5AzoQ',
+			},
+		],
+	},
+	
+	{
+		id: shortid.generate(),
+		word: 'bird',
+		audio: catAudioUrl,
+		giphyEmbeds: [
+			{
+				iframeSrc: 'l1J9uG4jNOSsYtbkA',
+				iframeWidth: '480',
+				iframeHeight: '285',
+				aHref: 'https://giphy.com/gifs/friday-shake-it-off-shoebill-stork-l1J9uG4jNOSsYtbkA',
+			},
+		],
+	},
+	
+	{
+		id: shortid.generate(),
+		word: 'fish',
+		audio: catAudioUrl,
+		giphyEmbeds: [
+			{
+				iframeSrc: '7eVp9MHlNI90c',
+				iframeWidth: '480',
+				iframeHeight: '380',
+				aHref: 'https://giphy.com/gifs/fish-playful-splashing-7eVp9MHlNI90c',
+			},
+			
+			{
+				iframeSrc: 'sxXJgb4LCmJ44',
+				iframeWidth: '480',
+				iframeHeight: '117',
+				aHref: 'https://giphy.com/gifs/clown-fish-sxXJgb4LCmJ44',
+			},
+		],
+	},
+	
+	{
+		id: shortid.generate(),
+		word: 'shark',
+		audio: catAudioUrl,
+		giphyEmbeds: [
+			{
+				iframeSrc: 'nDhXcwufoptC0',
+				iframeWidth: '480',
+				iframeHeight: '284',
+				aHref: 'https://giphy.com/gifs/fish-playful-splashing-7eVp9MHlNI90c',
+			},
+		],
+	},
+	
+	{
+		id: shortid.generate(),
+		word: 'crab',
+		audio: catAudioUrl,
+		giphyEmbeds: [
+			{
+				iframeSrc: 'odwOXY8XpcYWQ',
+				iframeWidth: '480',
+				iframeHeight: '270',
+				aHref: 'https://giphy.com/gifs/crab-crustatean-gif-odwOXY8XpcYWQ',
+			},
+		],
+	},
 ];
 
 export default function wordsReducers(state = initialState, action) {
