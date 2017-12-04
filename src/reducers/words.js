@@ -136,6 +136,13 @@ const initialState = [
 				iframeHeight: '270',
 				aHref: 'https://giphy.com/gifs/bat-gum-Wm3mmcfsEnqaA',
 			},
+			
+			{
+				iframeSrc: 'X1zfywreqWqIw',
+				iframeWidth: '480',
+				iframeHeight: '280',
+				aHref: 'https://giphy.com/gifs/X1zfywreqWqIw',
+			},
 		],
 	},
 	
@@ -213,6 +220,13 @@ const initialState = [
 				iframeHeight: '386',
 				aHref: 'https://giphy.com/gifs/feistmusic-century-feist-3ogwG0cKu7x87xU6VG',
 			},
+			
+			{
+				iframeSrc: 'l0ExbqkAKqIrlWdI4',
+				iframeWidth: '480',
+				iframeHeight: '365',
+				aHref: 'https://giphy.com/gifs/l0ExbqkAKqIrlWdI4',
+			},
 		],
 	},
 	
@@ -226,6 +240,13 @@ const initialState = [
 				iframeWidth: '480',
 				iframeHeight: '201',
 				aHref: 'https://giphy.com/gifs/run-forrest-gump-l2Sqc3POpzkj5r8SQ',
+			},
+			
+			{
+				iframeSrc: '26FKYPQg5CUfV2ipa',
+				iframeWidth: '480',
+				iframeHeight: '270',
+				aHref: 'https://giphy.com/gifs/animation-run-super-deluxe-26FKYPQg5CUfV2ipa',
 			},
 		],
 	},
@@ -241,6 +262,13 @@ const initialState = [
 				iframeHeight: '240',
 				aHref: 'https://giphy.com/gifs/l2JJIfI6nUkm5AzoQ',
 			},
+			
+			{
+				iframeSrc: '3o6Ztroynp3WpqLD1u',
+				iframeWidth: '480',
+				iframeHeight: '240',
+				aHref: 'https://giphy.com/gifs/bbc-wildlife-3o6Ztroynp3WpqLD1u',
+			},
 		],
 	},
 	
@@ -254,6 +282,13 @@ const initialState = [
 				iframeWidth: '480',
 				iframeHeight: '285',
 				aHref: 'https://giphy.com/gifs/friday-shake-it-off-shoebill-stork-l1J9uG4jNOSsYtbkA',
+			},
+			
+			{
+				iframeSrc: 'efqBQ5OOnQehq',
+				iframeWidth: '480',
+				iframeHeight: '258',
+				aHref: 'https://giphy.com/gifs/bird-standing-efqBQ5OOnQehq',
 			},
 		],
 	},
@@ -290,6 +325,13 @@ const initialState = [
 				iframeHeight: '284',
 				aHref: 'https://giphy.com/gifs/fish-playful-splashing-7eVp9MHlNI90c',
 			},
+			
+			{
+				iframeSrc: 'SZzKe0HhRlthC',
+				iframeWidth: '480',
+				iframeHeight: '230',
+				aHref: 'https://giphy.com/gifs/shark-shortfin-mako-SZzKe0HhRlthC',
+			},
 		],
 	},
 	
@@ -303,6 +345,13 @@ const initialState = [
 				iframeWidth: '480',
 				iframeHeight: '270',
 				aHref: 'https://giphy.com/gifs/crab-crustatean-gif-odwOXY8XpcYWQ',
+			},
+			
+			{
+				iframeSrc: 'l2Sq6SNEYMDQ8NtdK',
+				iframeWidth: '480',
+				iframeHeight: '270',
+				aHref: 'https://giphy.com/gifs/originals-l2Sq6SNEYMDQ8NtdK',
 			},
 		],
 	},
