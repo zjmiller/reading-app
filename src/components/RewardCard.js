@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import revealRewardCard from '../actions/revealRewardCard';
+
 import blueGemImgSrc from '../assets/images/gemBlue.png';
+import cardBackImgSrc from '../assets/images/card-back.jpeg';
 import coinImgSrc from '../assets/images/coin.png';
 import greenGemImgSrc from '../assets/images/gemGreen.png';
 import redGemImgSrc from '../assets/images/gemRed.png';
-
-import cardBackImgSrc from '../assets/images/card-back.jpeg';
 
 class RewardCard extends Component {
 	constructor(props) {
@@ -17,10 +18,18 @@ class RewardCard extends Component {
 	}
 	
   render() {
+		
+		const {
+			handleRevealRewardCard,
+			rewardCard,
+		} = this.props;
+		
 		const {
 			quantity,
 			rewardType,
-		} = this.props.rewardCard;
+		} = rewardCard;
+		
+		const rewardCardId = rewardCard.id;
 		
 		const imgSrc = function(){
 			if (rewardType === 'GOLD_COIN') return coinImgSrc;
@@ -33,7 +42,10 @@ class RewardCard extends Component {
 			<div className={this.state.isFlipped ? 'flipcard is-flipped' : 'flipcard'}>
 				<div className="flipcard--front">
 					<img
-						onClick={() => this.setState({ isFlipped: true })}
+						onClick={() => {
+							handleRevealRewardCard(rewardCardId);
+							this.setState({ isFlipped: true });
+						}}
 						src={cardBackImgSrc}
 						style={{
 							border: '2px solid #333',
@@ -86,4 +98,8 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(RewardCard);
+const mapDispatchToProps = dispatch => ({
+  handleRevealRewardCard: rewardCardId => dispatch(revealRewardCard(rewardCardId)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(RewardCard);
