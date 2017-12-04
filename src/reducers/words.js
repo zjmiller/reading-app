@@ -1,8 +1,21 @@
 import shortid from 'shortid';
 
+import batAudioUrl from '../assets/sounds/bat.m4a';
+import beeAudioUrl from '../assets/sounds/bee.m4a';
+import birdAudioUrl from '../assets/sounds/bird.m4a';
 import catAudioUrl from '../assets/sounds/cat.m4a';
+import crabAudioUrl from '../assets/sounds/crab.m4a';
 import dogAudioUrl from '../assets/sounds/dog.m4a';
+import fishAudioUrl from '../assets/sounds/fish.m4a';
 import foxAudioUrl from '../assets/sounds/fox.m4a';
+import frogAudioUrl from '../assets/sounds/frog.m4a';
+import jumpAudioUrl from '../assets/sounds/jump.m4a';
+import pigAudioUrl from '../assets/sounds/pig.m4a';
+import ratAudioUrl from '../assets/sounds/rat.m4a';
+import runAudioUrl from '../assets/sounds/run.m4a';
+import sharkAudioUrl from '../assets/sounds/shark.m4a';
+import sunAudioUrl from '../assets/sounds/sun.m4a';
+
 
 const initialState = [
 	{
@@ -93,7 +106,7 @@ const initialState = [
 	{
 		id: shortid.generate(),
 		word: 'pig',
-		audio: catAudioUrl,
+		audio: pigAudioUrl,
 		giphyEmbeds: [
 			{
 				iframeSrc: 'WsVJuYCz6qgJG',
@@ -128,7 +141,7 @@ const initialState = [
 	{
 		id: shortid.generate(),
 		word: 'bat',
-		audio: catAudioUrl,
+		audio: batAudioUrl,
 		giphyEmbeds: [
 			{
 				iframeSrc: 'Wm3mmcfsEnqaA',
@@ -149,7 +162,7 @@ const initialState = [
 	{
 		id: shortid.generate(),
 		word: 'rat',
-		audio: catAudioUrl,
+		audio: ratAudioUrl,
 		giphyEmbeds: [
 			{
 				iframeSrc: 'gOH54eiriYIwM',
@@ -170,7 +183,7 @@ const initialState = [
 	{
 		id: shortid.generate(),
 		word: 'bee',
-		audio: catAudioUrl,
+		audio: beeAudioUrl,
 		giphyEmbeds: [
 			{
 				iframeSrc: 'SSUyICBgb3tYI',
@@ -191,7 +204,7 @@ const initialState = [
 	{
 		id: shortid.generate(),
 		word: 'frog',
-		audio: catAudioUrl,
+		audio: frogAudioUrl,
 		giphyEmbeds: [
 			{
 				iframeSrc: 'ytAW7lMP77p5e',
@@ -212,7 +225,7 @@ const initialState = [
 	{
 		id: shortid.generate(),
 		word: 'sun',
-		audio: catAudioUrl,
+		audio: sunAudioUrl,
 		giphyEmbeds: [
 			{
 				iframeSrc: '3ogwG0cKu7x87xU6VG',
@@ -233,7 +246,7 @@ const initialState = [
 	{
 		id: shortid.generate(),
 		word: 'run',
-		audio: catAudioUrl,
+		audio: runAudioUrl,
 		giphyEmbeds: [
 			{
 				iframeSrc: 'l2Sqc3POpzkj5r8SQ',
@@ -254,7 +267,7 @@ const initialState = [
 	{
 		id: shortid.generate(),
 		word: 'jump',
-		audio: catAudioUrl,
+		audio: jumpAudioUrl,
 		giphyEmbeds: [
 			{
 				iframeSrc: 'l2JJIfI6nUkm5AzoQ',
@@ -275,7 +288,7 @@ const initialState = [
 	{
 		id: shortid.generate(),
 		word: 'bird',
-		audio: catAudioUrl,
+		audio: birdAudioUrl,
 		giphyEmbeds: [
 			{
 				iframeSrc: 'l1J9uG4jNOSsYtbkA',
@@ -296,7 +309,7 @@ const initialState = [
 	{
 		id: shortid.generate(),
 		word: 'fish',
-		audio: catAudioUrl,
+		audio: fishAudioUrl,
 		giphyEmbeds: [
 			{
 				iframeSrc: '7eVp9MHlNI90c',
@@ -317,7 +330,7 @@ const initialState = [
 	{
 		id: shortid.generate(),
 		word: 'shark',
-		audio: catAudioUrl,
+		audio: sharkAudioUrl,
 		giphyEmbeds: [
 			{
 				iframeSrc: 'nDhXcwufoptC0',
@@ -338,7 +351,7 @@ const initialState = [
 	{
 		id: shortid.generate(),
 		word: 'crab',
-		audio: catAudioUrl,
+		audio: crabAudioUrl,
 		giphyEmbeds: [
 			{
 				iframeSrc: 'odwOXY8XpcYWQ',
