@@ -80,6 +80,7 @@ class RewardCard extends Component {
 				
 					<span
 						style={{
+							fontFamily: 'Georgia',
 							fontSize: '36px'
 						}}
 					>

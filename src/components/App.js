@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import createAndEnterEngagement from '../actions/createAndEnterEngagement';
 import handleLetterDrop from '../actions/handleLetterDrop';
 import Engagement from './Engagement';
+import Wealth from './Wealth';
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
 						width: '100%',
 					}}
 				>
+					<Wealth />
 	        <button onClick={handleCreateAndEnterEngagement}>START</button>
 					{currentlyInEngagement && <Engagement />}
 	      </div>
