@@ -39,7 +39,7 @@ class Engagement extends Component {
 					<div style={{ height: '50px' }}></div>
 					<AnswerField />
 					<LettersPool />
-					<Modal isReceivingReward={isReceivingReward} />
+					<Modal />
 				</div>
       </div>
     );
@@ -51,7 +51,6 @@ const mapStateToProps = state => {
 	const word = state.words.find(word => word.id === engagement.wordId);
 	const letters = engagement.lettersPool;
   return {
-		isReceivingReward: state.session.engagementState === 'RECEIVING_REWARD',
 		letters,
 		word,
   };

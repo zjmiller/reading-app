@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Button, Modal } from 'react-bootstrap';
 
 import backgroundImageSrc from '../assets/images/battleback8.png';
+import areAllRewardCardsRevealed from '../selectors/areAllRewardCardsRevealed';
 
 import Chest from './Chest';
 import RewardCards from './RewardCards';
@@ -12,6 +13,7 @@ class SuccessModal extends Component {
 		super(props);
 		this.state = {
 			cardWidth: 0,
+			modalShowing: true,
 			testFlipped: false,
 		};
 	}
@@ -22,15 +24,22 @@ class SuccessModal extends Component {
 		}
 	}
 	
+	closeModal = () => {
+		this.setState({
+			modalShowing: false,
+		});
+	}
+	
   render() {
 		const {
+			areAllRewardCardsRevealed,
 			isReceivingReward,
 			receivingRewardState,
 		} = this.props;
 		
     return (
       <div>
-				<Modal show={isReceivingReward}>
+				<Modal show={isReceivingReward && this.state.modalShowing} onHide={() => areAllRewardCardsRevealed && this.closeModal()}>
 					<Modal.Body 
 						style={{
 							alignItems: 'center',
@@ -60,6 +69,8 @@ class SuccessModal extends Component {
 
 const mapStateToProps = state => {
   return {
+		areAllRewardCardsRevealed: console.log(areAllRewardCardsRevealed(state)) || areAllRewardCardsRevealed(state),
+		isReceivingReward: state.session.engagementState === 'RECEIVING_REWARD',	
 		receivingRewardState: state.session.receivingRewardState,
   };
 };
