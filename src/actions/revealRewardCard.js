@@ -1,5 +1,6 @@
 import loadNextEngagement from './loadNextEngagement';
 
+import gainReward from '../actions/gainReward';
 import areAllRewardCardsRevealed from '../selectors/areAllRewardCardsRevealed';
 
 export default function revealRewardCard(rewardCardId){
@@ -15,10 +16,6 @@ export default function revealRewardCard(rewardCardId){
 		const rewardType = rewardCard.rewardType;
 		const quantity = rewardCard.quantity;
 		
-		dispatch({
-			type: 'GAIN_REWARD',
-			rewardType,
-			quantity,
-		});
+		dispatch(gainReward(rewardType, quantity));
 	};
 }

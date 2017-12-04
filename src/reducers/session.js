@@ -10,6 +10,16 @@ const initialState = {
 };
 
 export default function sessionReducer(state = initialState, action) {
+	if (action.type === 'SET_WEALTH') {
+		return Object.assign(
+			{},
+			state,
+			{
+				wealth: action.wealth,
+			}
+		);
+	}
+	
 	if (action.type === 'ENTER_ENGAGEMENT') {
 		return Object.assign(
 			{},
