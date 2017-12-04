@@ -25,6 +25,7 @@ class RewardCard extends Component {
 		} = this.props;
 		
 		const {
+			isPremium,
 			quantity,
 			rewardType,
 		} = rewardCard;
@@ -42,6 +43,7 @@ class RewardCard extends Component {
 			<div className={this.state.isFlipped ? 'flipcard is-flipped' : 'flipcard'}>
 				<div className="flipcard--front">
 					<img
+						className={isPremium ? 'premium-cardback' : ''}
 						onClick={() => {
 							handleRevealRewardCard(rewardCardId);
 							this.setState({ isFlipped: true });
