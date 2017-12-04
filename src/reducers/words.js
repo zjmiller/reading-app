@@ -124,6 +124,62 @@ const initialState = [
 			},
 		],
 	},
+
+	{
+		id: shortid.generate(),
+		word: 'bat',
+		audio: catAudioUrl,
+		giphyEmbeds: [
+			{
+				iframeSrc: 'Wm3mmcfsEnqaA',
+				iframeWidth: '480',
+				iframeHeight: '270',
+				aHref: 'https://giphy.com/gifs/bat-gum-Wm3mmcfsEnqaA',
+			},
+		],
+	},
+	
+	{
+		id: shortid.generate(),
+		word: 'rat',
+		audio: catAudioUrl,
+		giphyEmbeds: [
+			{
+				iframeSrc: 'gOH54eiriYIwM',
+				iframeWidth: '480',
+				iframeHeight: '270',
+				aHref: 'https://giphy.com/gifs/costume-gOH54eiriYIwM',
+			},
+			
+			{
+				iframeSrc: 'q15EjVC1dBbOM',
+				iframeWidth: '480',
+				iframeHeight: '363',
+				aHref: 'https://giphy.com/gifs/q15EjVC1dBbOM',
+			},
+		],
+	},
+	
+	{
+		id: shortid.generate(),
+		word: 'bee',
+		audio: catAudioUrl,
+		giphyEmbeds: [
+			{
+				iframeSrc: 'SSUyICBgb3tYI',
+				iframeWidth: '480',
+				iframeHeight: '270',
+				aHref: 'https://giphy.com/gifs/bees-SSUyICBgb3tYI',
+			},
+			
+			{
+				iframeSrc: '5HXevEAuRyily',
+				iframeWidth: '480',
+				iframeHeight: '374',
+				aHref: 'https://giphy.com/gifs/5HXevEAuRyily',
+			},
+		],
+	},
 ];
 
 export default function wordsReducers(state = initialState, action) {
