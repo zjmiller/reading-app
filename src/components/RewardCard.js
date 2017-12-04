@@ -1,21 +1,40 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class RewardChest extends Component {
+import blueGemImgSrc from '../assets/images/gemBlue.png';
+import coinImgSrc from '../assets/images/coin.png';
+import greenGemImgSrc from '../assets/images/gemGreen.png';
+import redGemImgSrc from '../assets/images/gemRed.png';
+
+import cardBackImgSrc from '../assets/images/card-back.jpeg';
+
+class RewardCard extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			testFlipped: true,
+			isFlipped: false,
 			cardWidth: 180,
 		}
 	}
 	
   render() {
+		const {
+			quantity,
+			rewardType,
+		} = this.props.rewardCard;
+		
+		const imgSrc = function(){
+			if (rewardType === 'GOLD_COIN') return coinImgSrc;
+			if (rewardType === 'BLUE_GEM') return blueGemImgSrc;
+			if (rewardType === 'GREEN_GEM') return greenGemImgSrc;
+			if (rewardType === 'RED_GEM') return redGemImgSrc;
+		}();
+		
     return (
-			<div className={this.state.testFlipped ? 'flipcard is-flipped' : 'flipcard'} key="1">
+			<div className={this.state.isFlipped ? 'flipcard is-flipped' : 'flipcard'}>
 				<div className="flipcard--front">
 					<img
-						onClick={() => this.setState({ testFlipped: true })}
+						onClick={() => this.setState({ isFlipped: true })}
 						src={cardBackImgSrc}
 						style={{
 							border: '2px solid #333',
@@ -53,9 +72,9 @@ class RewardChest extends Component {
 							fontSize: '36px'
 						}}
 					>
-						3
+						{ quantity }
 					</span>
-					<img src={blueGemImgSrc} />
+					<img src={imgSrc} />
 				</div>
 			</div>
     );
@@ -68,4 +87,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(RewardChest);
+export default connect(mapStateToProps)(RewardCard);
