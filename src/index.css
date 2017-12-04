@@ -83,3 +83,11 @@ body {
 		transform: scale(1.02, 1.02);
   }
 }
+
+.slick-prev:before, .slick-next:before {
+	font-size: 50px;
+}
+
+.slick-prev {
+	left: -53px;
+}
