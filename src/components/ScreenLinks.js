@@ -17,6 +17,7 @@ class ScreenLinks extends Component {
 				}}
 			>
 				<BackBtn />
+				<div style={{ width: '7px' }} />
         <StoreLink />
       </div>
     );

@@ -2,23 +2,29 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import navigateBack from '../actions/navigateBack';
+import backBtnImgSrc from '../assets/images/back-arrow.svg';
 
 class BackBtn extends Component {
   render() {
-		const { handleNavigateBack } = this.props;
-		
+		const { handleNavigateBack, thereIsPrevScreen } = this.props;
+		console.log(thereIsPrevScreen)
     return (
       <div
-				onClick={handleNavigateBack}
+				onClick={() => thereIsPrevScreen && handleNavigateBack()}
 				style={{
-					backgroundColor: 'rgba(0,0,0,0.7)',
+					alignItems: 'center',
+					backgroundColor: 'rgba(0,0,0,0.8)',
 					borderRadius: '20px',
+					display: 'flex',
 					color: '#fff',
-					cursor: 'pointer',
-					padding: '10px',
+					cursor: thereIsPrevScreen ? 'pointer' : 'auto',
+					height: '40px',
+					justifyContent: 'center',
+					opacity: thereIsPrevScreen ? 1 : 0.5,
+					width: '40px',
 				}}
 			>
-        Back
+        <img src={backBtnImgSrc} style={{ width: '20px' }} />
       </div>
     );
   }
@@ -26,7 +32,7 @@ class BackBtn extends Component {
 
 const mapStateToProps = state => {
   return {
-
+		thereIsPrevScreen: state.session.previousScreen !== undefined,
   };
 };
 

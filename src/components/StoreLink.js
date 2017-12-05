@@ -2,23 +2,29 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import navigateToStoreScreen from '../actions/navigateToStoreScreen';
+import storeIconImgSrc from '../assets/images/store-icon.svg';
 
 class StoreLink extends Component {
   render() {
-		const { handleNavigateToStoreScreen } = this.props;
+		const { atStore, handleNavigateToStoreScreen } = this.props;
 		
     return (
       <div
-				onClick={handleNavigateToStoreScreen}
+				onClick={() => !atStore && handleNavigateToStoreScreen()}
 				style={{
-					backgroundColor: 'rgba(0,0,0,0.7)',
+					alignItems: 'center',
+					backgroundColor: 'rgba(0,0,0,0.8)',
 					borderRadius: '20px',
+					display: 'flex',
 					color: '#fff',
-					cursor: 'pointer',
-					padding: '10px',
+					cursor: atStore ? 'auto' : 'pointer',
+					height: '40px',
+					justifyContent: 'center',
+					opacity: atStore ? 0.5 : 1,
+					width: '40px',
 				}}
 			>
-        Store
+        <img src={storeIconImgSrc} style={{ width: '20px' }} />
       </div>
     );
   }
@@ -26,7 +32,7 @@ class StoreLink extends Component {
 
 const mapStateToProps = state => {
   return {
-
+		atStore: state.session.currentScreen === 'STORE',
   };
 };
 
