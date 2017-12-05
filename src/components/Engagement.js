@@ -42,8 +42,8 @@ class Engagement extends Component {
 						>
 							<WordAudioIcon word={word} />
 							{
-								playerItems.map(playerItem =>
-									<PlayerItem playerItem={playerItem} style={{ marginLeft: '10px' }}/>
+								playerItems.map((playerItem, i) =>
+									<PlayerItem key={i} playerItem={playerItem} style={{ marginLeft: '10px' }}/>
 								)
 							}
 						</div>

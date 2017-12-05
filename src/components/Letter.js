@@ -17,6 +17,7 @@ class Letter extends Component {
 							style={Object.assign({}, provided.draggableStyle, {
 								alignItems: 'center',
 								display: 'flex',
+								filter: letter.isHighlighted ? 'saturate(1000%)' : '',
 								height: '90px',
 								fontWeight: '700',
 								justifyContent: 'center',

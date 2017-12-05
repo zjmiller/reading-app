@@ -10,6 +10,7 @@ const initialState = [
 		imgSrc: spyglassImgSrc,
 		cooldown: 10,
 		effects: [
+			'MOVE_ALL_LETTERS_BACK_TO_POOL',
 			'HIGHLIGHT_TILES_IN_WORD',
 		],
 		cost: [

@@ -11,19 +11,25 @@ export default function createEngagement(engagementId) {
 		const wordId = word.id;
 		const wordLetters = word.word.split('').map(s => s.toUpperCase());
 		
-		let lettersPool = wordLetters.concat();
+		const lettersInWord = wordLetters.concat();
+		
+		let letterIds = [];
+		lettersInWord.forEach((letter, i) => {
+			const letterId = shortid.generate();
+			const isInWord = true;
+			createLetter(dispatch, getState, letterId, letter, isInWord);
+			letterIds.push(letterId);
+		});
+		
 		for (let i = 0; i < 5; i++) {
-			lettersPool = lettersPool.concat(getRandomUpperCaseLetter());
+			const randomUpperCaseLetter = getRandomUpperCaseLetter();
+			const letterId = shortid.generate();
+			const isInWord = false;
+			createLetter(dispatch, getState, letterId, randomUpperCaseLetter, isInWord);
+			letterIds.push(letterId);
 		}
 		
-		lettersPool = shuffleArray(lettersPool);
-		
-		const letterIds = [];
-		lettersPool.forEach((letter, i) => {
-			const letterId = shortid.generate();
-			createLetter(dispatch, getState, letterId, letter);
-			letterIds[i] = letterId;
-		});
+		letterIds = shuffleArray(letterIds);
 		
 		dispatch({
 			type: 'CREATE_ENGAGEMENT',
