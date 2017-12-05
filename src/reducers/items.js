@@ -15,11 +15,11 @@ const initialState = [
 		cost: [
 			{
 				moneyType: 'GOLD_COIN',
-				quantity: 5000,
+				quantity: 50,
 			},
 			{
 				moneyType: 'BLUE_GEM',
-				quantity: 30,
+				quantity: 3,
 			},
 		],
 	}

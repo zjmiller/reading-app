@@ -22,6 +22,7 @@ class ItemAtStore extends Component {
 				style={{
 					backgroundColor: '#f5f5dc',
 					boxShadow: '2px 2px 5px #333',
+					cursor: 'pointer',
 					display: 'flex',
 					height: '120px',
 					padding: '10px',

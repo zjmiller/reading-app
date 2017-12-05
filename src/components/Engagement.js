@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
 import AnswerField from './AnswerField';
 import Carousel from './Carousel';
 import EngagementBackground from './EngagementBackground';
 import LettersPool from './LettersPool';
 import Modal from './Modal';
+import PlayerItem from './PlayerItem';
 import WordAudioIcon from './WordAudioIcon';
 
 class Engagement extends Component {
@@ -12,6 +14,7 @@ class Engagement extends Component {
 		const {
 			letters,
 			isReceivingReward,
+			playerItems,
 			word,
 		} = this.props;
 		
@@ -32,7 +35,18 @@ class Engagement extends Component {
 							justifyContent: 'center',
 						}}
 					>
-						<WordAudioIcon word={word} />
+						<div
+							style={{
+								display: 'flex',
+							}}
+						>
+							<WordAudioIcon word={word} />
+							{
+								playerItems.map(playerItem =>
+									<PlayerItem playerItem={playerItem} style={{ marginLeft: '10px' }}/>
+								)
+							}
+						</div>
 						<div style={{ height: '20px' }}></div>
 						<Carousel />
 					</div>
@@ -50,8 +64,10 @@ const mapStateToProps = state => {
 	const engagement = state.engagements[state.engagements.length - 1];
 	const word = state.words.find(word => word.id === engagement.wordId);
 	const letters = engagement.lettersPool;
+	const playerItems = state.session.items;
   return {
 		letters,
+		playerItems,
 		word,
   };
 };

@@ -9,6 +9,7 @@ const initialState = {
 		'RED_GEM': 0,
 	},
 	wordsSoFar: [],
+	items: [],
 };
 
 export default function sessionReducer(state = initialState, action) {
@@ -29,6 +30,19 @@ export default function sessionReducer(state = initialState, action) {
 			{
 				currentScreen: 'STORE',
 				previousScreen: state.currentScreen,
+			}
+		);
+	}
+	
+	if (action.type === 'BUY_ITEM_AT_STORE') {
+		return Object.assign(
+			{},
+			state,
+			{
+				items: state.items.concat({
+					itemId: action.itemId,
+					cooldownTimer: 0,
+				}),
 			}
 		);
 	}
@@ -90,6 +104,22 @@ export default function sessionReducer(state = initialState, action) {
 					state.wealth,
 					{
 						[action.rewardType]: state.wealth[action.rewardType] + action.quantity,
+					}
+				),
+			}
+		);
+	}
+	
+	if (action.type === 'SUBTRACT_WEALTH') {
+		return Object.assign(
+			{},
+			state,
+			{
+				wealth: Object.assign(
+					{},
+					state.wealth,
+					{
+						[action.rewardType]: state.wealth[action.rewardType] - action.quantity,
 					}
 				),
 			}
