@@ -8,10 +8,6 @@ body {
   font-family: sans-serif;
 }
 
-.slick-prev:before, .slick-next:before {
-	color: black;
-}
-
 .modal-dialog {
 	width: 700px;
 }
@@ -76,4 +72,17 @@ body {
 
 .slick-prev {
 	left: -53px;
+}
+
+.slick-next {
+	right: -53px;
+}
+
+.slick-arrow, .slick-next {
+	height: 50px;
+	width: 50px;
+}
+
+.slick-prev:before, .slick-next:before {
+	color: black;
 }
