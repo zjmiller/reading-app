@@ -40,7 +40,7 @@ class PlayerItem extends Component {
 							backgroundColor: 'rgba(0,0,0,0.75)',
 							color: '#fff',
 							display: 'flex',
-							fontFamily: 'Georgia',
+							fontFamily: 'Trebuchet',
 							fontSize: '48px',
 							fontWeight: 700,
 							justifyContent: 'center',

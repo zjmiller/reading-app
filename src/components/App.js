@@ -15,8 +15,8 @@ import fetchWealthInformation from '../api/fetchWealthInformation';
 
 class App extends Component {
 	componentDidMount() {
-		this.props.handleSetWealth(this.props.initialWealth);
-		this.props.handleCreateAndEnterEngagement();
+		if (!localStorage.getItem('READING_APP_STATE')) this.props.handleSetWealth(this.props.initialWealth);
+		if (!this.props.currentlyInEngagement) this.props.handleCreateAndEnterEngagement();
 	}
 	
   render() {
@@ -47,6 +47,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
+	currentlyInEngagement: state.session.inEngagement,
 	onEngagementScreen: state.session.currentScreen === 'ENGAGEMENT',
 	onStoreScreen: state.session.currentScreen === 'STORE',
 	initialWealth: fetchWealthInformation(),

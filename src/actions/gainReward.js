@@ -8,6 +8,6 @@ export default function gainReward(rewardType, quantity){
 			quantity,
 		});
 		
-		saveWealthInformation(getState());
+		//saveWealthInformation(getState());
 	}
 }
