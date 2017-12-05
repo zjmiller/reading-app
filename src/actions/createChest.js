@@ -4,7 +4,7 @@ import getCurrentEngagement from '../selectors/getCurrentEngagement';
 
 export default function createChest(chestId) {
 	return (dispatch, getState) => {
-		const isPremium = Math.random() > 0.9 ? true : false;
+		const isPremium = Math.random() > 0.93 ? true : false;
 		const rewardCards = [];
 		for (let i = 0; i < 3; i++) {
 			const rewardCardId = shortid.generate();
