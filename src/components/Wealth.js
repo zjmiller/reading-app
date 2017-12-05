@@ -13,8 +13,6 @@ class Wealth extends Component {
 					alignItems: 'center',
 					display: 'flex',
 					flexDirection: 'column',
-					fontFamily: 'Georgia',
-					fontSize: '13px',
 					height: '130px',
 					position: 'fixed',
 					justifyContent: 'space-between',

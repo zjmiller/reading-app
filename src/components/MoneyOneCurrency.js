@@ -21,6 +21,8 @@ class MoneyOneCurrency extends Component {
 					backgroundColor: 'rgba(255, 255, 255, 0.85)',
 					boxShadow: '2px 2px 5px #333',
 					borderRadius: '25px',
+					fontFamily: 'Georgia',
+					fontSize: '13px',
 					paddingRight: '10px',
 					userSelect: 'none',
 				}, style)}
