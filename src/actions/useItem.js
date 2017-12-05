@@ -1,8 +1,6 @@
 export default function useItem(itemId) {
 	return (dispatch, getState) => {
-		console.log('here')
 		const item = getState().items.find(item => item.id === itemId);
-		console.log(itemId, item)
 		item.effects.forEach(effectName => {
 			if (effectName === 'MOVE_ALL_LETTERS_BACK_TO_POOL') {
 				dispatch({
@@ -16,5 +14,10 @@ export default function useItem(itemId) {
 				});
 			}
 		});
+		
+		dispatch({
+			type: 'START_COOLDOWN_TIMER',
+			itemId,
+		})
 	};
 }

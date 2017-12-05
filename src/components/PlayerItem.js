@@ -13,7 +13,11 @@ class PlayerItem extends Component {
 		} = this.props;
     return (
       <div
-				onClick={() => handleUseItem(item.id)}
+				onClick={() => {
+						if (cooldownTimer >= 1) return;
+						handleUseItem(item.id)
+					}
+				}
 				style={Object.assign({
 					position: 'relative',
 				}, style)}

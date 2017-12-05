@@ -80,6 +80,15 @@ export default function sessionReducer(state = initialState, action) {
 			{
 				engagementState: 'RECEIVING_REWARD',
 				receivingRewardState: 'CHEST_APPEARING',
+				items: state.items.map(item => {
+					return Object.assign(
+						{},
+						item,
+						{
+							cooldownTimer: item.cooldownTimer - 1,
+						}
+					);
+				}),
 			}
 		);
 	}
@@ -122,6 +131,25 @@ export default function sessionReducer(state = initialState, action) {
 						[action.rewardType]: state.wealth[action.rewardType] - action.quantity,
 					}
 				),
+			}
+		);
+	}
+	
+	if (action.type === 'START_COOLDOWN_TIMER') {
+		return Object.assign(
+			{},
+			state,
+			{
+				items: state.items.map(item => {
+					if (item.itemId !== action.itemId) return item;
+					else return Object.assign(
+						{},
+						item,
+						{
+							cooldownTimer: 9,
+						}
+					);
+				}),
 			}
 		);
 	}
