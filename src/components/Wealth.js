@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import blueGemImgSrc from '../assets/images/gemBlue.png';
-import coinImgSrc from '../assets/images/coin.png';
-import greenGemImgSrc from '../assets/images/gemGreen.png';
-import redGemImgSrc from '../assets/images/gemRed.png';
+import MoneyOneCurrency from './MoneyOneCurrency';
 
 class Wealth extends Component {
   render() {
@@ -26,53 +23,10 @@ class Wealth extends Component {
 					zIndex: 3,
 				}}
 			>
-        <div
-					style={{
-						backgroundColor: 'rgba(255, 255, 255, 0.85)',
-						boxShadow: '2px 2px 5px #333',
-						borderRadius: '25px',
-						paddingRight: '10px',
-					}}
-				>
-					<img src={coinImgSrc} style={{ width: '30px' }} />
-					<span>{wealth['GOLD_COIN']}</span>
-				</div>
-				
-				<div
-					style={{
-						backgroundColor: 'rgba(255, 255, 255, 0.85)',
-						boxShadow: '2px 2px 5px #333',
-						borderRadius: '25px',
-						paddingRight: '8px',
-					}}
-				>
-					<img src={blueGemImgSrc} style={{ width: '30px' }} />
-					<span>{wealth['BLUE_GEM']}</span>
-				</div>
-				
-				<div
-					style={{
-						backgroundColor: 'rgba(255, 255, 255, 0.85)',
-						boxShadow: '2px 2px 5px #333',
-						borderRadius: '25px',
-						paddingRight: '8px',
-					}}
-				>
-					<img src={greenGemImgSrc} style={{ width: '30px' }} />
-					<span>{wealth['GREEN_GEM']}</span>
-				</div>
-				
-				<div
-					style={{
-						backgroundColor: 'rgba(255, 255, 255, 0.85)',
-						boxShadow: '2px 2px 5px #333',
-						borderRadius: '25px',
-						paddingRight: '8px',
-					}}
-				>
-					<img src={redGemImgSrc} style={{ width: '30px' }} />
-					<span>{wealth['RED_GEM']}</span>
-				</div>
+				<MoneyOneCurrency moneyType='GOLD_COIN' quantity={wealth['GOLD_COIN']} />
+				<MoneyOneCurrency moneyType='BLUE_GEM' quantity={wealth['BLUE_GEM']} />
+				<MoneyOneCurrency moneyType='GREEN_GEM' quantity={wealth['GREEN_GEM']} />
+				<MoneyOneCurrency moneyType='RED_GEM' quantity={wealth['RED_GEM']} />
       </div>
     );
   }
