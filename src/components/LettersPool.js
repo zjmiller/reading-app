@@ -15,6 +15,7 @@ class LettersPool extends Component {
 						ref={provided.innerRef}
 						style={{
 							display: 'flex',
+							height: '90px',
 							margin: 'auto',
 							width: '600px',
 						}}
