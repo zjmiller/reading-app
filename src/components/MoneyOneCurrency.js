@@ -22,6 +22,7 @@ class MoneyOneCurrency extends Component {
 					boxShadow: '2px 2px 5px #333',
 					borderRadius: '25px',
 					paddingRight: '10px',
+					userSelect: 'none',
 				}, style)}
 			>
 				<img src={imgSrc} style={{ width: '30px' }} />

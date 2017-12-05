@@ -21,6 +21,7 @@ class BackBtn extends Component {
 					height: '40px',
 					justifyContent: 'center',
 					opacity: thereIsPrevScreen ? 1 : 0.5,
+					userSelect: 'none',
 					width: '40px',
 				}}
 			>

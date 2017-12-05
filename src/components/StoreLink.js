@@ -21,6 +21,7 @@ class StoreLink extends Component {
 					height: '40px',
 					justifyContent: 'center',
 					opacity: atStore ? 0.5 : 1,
+					userSelect: 'none',
 					width: '40px',
 				}}
 			>
