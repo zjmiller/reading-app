@@ -3,6 +3,8 @@ import { DragDropContext } from 'react-beautiful-dnd';
 import { connect } from 'react-redux';
 
 import Engagement from './Engagement';
+import ScreenLinks from './ScreenLinks';
+import Store from './Store';
 import Wealth from './Wealth';
 
 import createAndEnterEngagement from '../actions/createAndEnterEngagement';
@@ -19,7 +21,8 @@ class App extends Component {
 	
   render() {
 		const {
-			currentlyInEngagement,
+			onEngagementScreen,
+			onStoreScreen,
 			handleCreateAndEnterEngagement, 
 			onDragEndHandleLetterDrop,
 		} = this.props;
@@ -33,8 +36,10 @@ class App extends Component {
 						width: '100%',
 					}}
 				>
+					<ScreenLinks />
 					<Wealth />
-					{currentlyInEngagement && <Engagement />}
+					{onEngagementScreen && <Engagement />}
+					{onStoreScreen && <Store />}
 	      </div>
 			</DragDropContext>
     );
@@ -42,7 +47,8 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-	currentlyInEngagement: !!state.session.inEngagement,
+	onEngagementScreen: state.session.currentScreen === 'ENGAGEMENT',
+	onStoreScreen: state.session.currentScreen === 'STORE',
 	initialWealth: fetchWealthInformation(),
 });
 

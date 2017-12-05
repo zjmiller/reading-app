@@ -1,4 +1,6 @@
 const initialState = {
+	currentScreen: undefined,
+	previousScreen: undefined,
 	inEngagement: false,
 	wealth: {
 		'GOLD_COIN': 0,
@@ -20,11 +22,35 @@ export default function sessionReducer(state = initialState, action) {
 		);
 	}
 	
+	if (action.type === 'NAVIGATE_TO_STORE_SCREEN') {
+		return Object.assign(
+			{},
+			state,
+			{
+				currentScreen: 'STORE',
+				previousScreen: state.currentScreen,
+			}
+		);
+	}
+	
+	if (action.type === 'NAVIGATE_BACK') {
+		return Object.assign(
+			{},
+			state,
+			{
+				currentScreen: state.previousScreen,
+				previousScreen: state.currentScreen,
+			}
+		);
+	}
+	
 	if (action.type === 'ENTER_ENGAGEMENT') {
 		return Object.assign(
 			{},
 			state,
 			{
+				currentScreen: 'ENGAGEMENT',
+				previousScreen: state.currentScreen,
 				inEngagement: action.engagementId,
 				engagementState: 'ANSWERING',
 				receivingRewardState: false,
