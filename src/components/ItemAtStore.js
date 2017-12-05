@@ -5,10 +5,15 @@ import MoneyOneCurrency from './MoneyOneCurrency';
 
 import buyItemAtStore from '../actions/buyItemAtStore';
 
+import canPlayerAffordItem from '../selectors/canPlayerAffordItem';
+import doesPlayerOwnItem from '../selectors/doesPlayerOwnItem';
+
 class ItemAtStore extends Component {
   render() {
 		const {
 			handleBuyItemAtStore,
+			playerAlreadyOwnsItem,
+			playerCanAffordItem,
 			item,
 		} = this.props;
 		
@@ -18,11 +23,15 @@ class ItemAtStore extends Component {
 		
     return (
       <div
-				onClick={() => handleBuyItemAtStore(item.id)}
+				onClick={() => {
+					if (playerAlreadyOwnsItem) return;
+					if (!playerCanAffordItem) return;
+					handleBuyItemAtStore(item.id)
+				}}
 				style={{
 					backgroundColor: '#f5f5dc',
 					boxShadow: '2px 2px 5px #333',
-					cursor: 'pointer',
+					cursor: playerAlreadyOwnsItem || !playerCanAffordItem ? 'auto' : 'pointer',
 					display: 'flex',
 					height: '120px',
 					padding: '10px',
@@ -46,16 +55,40 @@ class ItemAtStore extends Component {
 						padding: '0 15px',
 					}}
 				>
-					<span
-						style={{
-							fontFamily: 'Georgia',
-							fontSize: '18px',
-							fontWeight: 600,
-							textAlign: 'center',
-						}}
-					>
-						{ name }
-					</span>
+					<div>
+						<div
+							style={{
+								fontFamily: 'Georgia',
+								fontSize: '18px',
+								fontWeight: 600,
+								textAlign: 'center',
+							}}
+						>
+							{ name }
+						</div>
+						<div
+							style={{
+								color: '#999',
+								fontFamily: 'Georgia',
+								fontSize: '12px',
+								fontWeight: 400,
+								textAlign: 'center',
+							}}
+						>
+							{
+								playerAlreadyOwnsItem 
+								&&
+								'Player already has item.'
+							}
+							{
+								!playerAlreadyOwnsItem
+								&&
+								!playerCanAffordItem
+								&&
+								'Player cannot afford item.'
+							}
+						</div>
+					</div>
 					<div
 						style={{
 							display: 'flex',
@@ -81,9 +114,10 @@ class ItemAtStore extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, { item }) => {
   return {
-
+		playerAlreadyOwnsItem: doesPlayerOwnItem(state, item.id),
+		playerCanAffordItem: canPlayerAffordItem(state, item.id),
   };
 };
 
