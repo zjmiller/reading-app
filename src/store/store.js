@@ -7,7 +7,12 @@ import saveState from '../api/saveState';
 import items from '../content/items';
 import rootReducer from '../reducers/rootReducer';
 
-const savedState = fetchState();
+if (localStorage.getItem('READING_APP_V') !== '2') {
+	localStorage.removeItem('READING_APP_STATE');
+	localStorage.setItem('READING_APP_V', '2');
+}
+
+let savedState = fetchState();
 
 const modifiedState = {
 	chests: savedState.chests,
