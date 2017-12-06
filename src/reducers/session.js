@@ -14,6 +14,17 @@ const initialState = {
 };
 
 export default function sessionReducer(state = initialState, action) {
+	
+	if (action.type === 'CLEAR_COMPLETED_WORDS_CACHE') {
+		return Object.assign(
+			{},
+			state,
+			{
+				wordsSoFar: [],
+			}
+		);
+	}
+	
 	if (action.type === 'SHOW_ANSWER_MODAL') {
 		return Object.assign(
 			{},

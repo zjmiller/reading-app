@@ -1,12 +1,17 @@
 import shortid from 'shortid';
-import getRandomUpperCaseLetter from '../util/getRandomUpperCaseLetter';
+
+import clearCompletedWordsCache from './clearCompletedWordsCache';
 import createLetter from './createLetter';
+
 import backgroundImageSrc from '../assets/images/battleback10.png'
 import getNewRandomWord from '../selectors/getNewRandomWord';
+import hasCompletedAllWords from '../selectors/hasCompletedAllWords';
+import getRandomUpperCaseLetter from '../util/getRandomUpperCaseLetter';
 import shuffleArray from '../util/shuffleArray';
 
 export default function createEngagement(engagementId) {
 	return (dispatch, getState) => {
+		if (hasCompletedAllWords(getState())) dispatch(clearCompletedWordsCache());
 		const word = getNewRandomWord(getState());
 		const wordId = word.id;
 		const wordLetters = word.word.split('').map(s => s.toUpperCase());
