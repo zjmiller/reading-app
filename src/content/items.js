@@ -20,11 +20,11 @@ export default [
 		cost: [
 			{
 				moneyType: 'GOLD_COIN',
-				quantity: 30,
+				quantity: 3000,
 			},
 			{
 				moneyType: 'BLUE_GEM',
-				quantity: 1,
+				quantity: 40,
 			},
 		],
 	},
@@ -44,11 +44,11 @@ export default [
 		cost: [
 			{
 				moneyType: 'GOLD_COIN',
-				quantity: 50,
+				quantity: 4000,
 			},
 			{
 				moneyType: 'RED_GEM',
-				quantity: 1,
+				quantity: 60,
 			},
 		],
 	},
