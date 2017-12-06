@@ -21,7 +21,7 @@ export default function createEngagement(engagementId) {
 			letterIds.push(letterId);
 		});
 		
-		for (let i = 0; i < 5; i++) {
+		for (let i = 0; i < Math.min(5, 9 - lettersInWord.length); i++) {
 			const randomUpperCaseLetter = getRandomUpperCaseLetter();
 			const letterId = shortid.generate();
 			const isInWord = false;
