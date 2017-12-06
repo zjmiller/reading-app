@@ -342,6 +342,7 @@ export default [
 	{
 		id: 'word-14',
 		word: 'shark',
+		chestMin: 'RARE',
 		audio: sharkAudioUrl,
 		giphyEmbeds: [
 			{
@@ -384,6 +385,7 @@ export default [
 	{
 		id: 'word-16',
 		word: 'igloo',
+		chestMin: 'EPIC',
 		audio: iglooAudioUrl,
 		giphyEmbeds: [
 			{
@@ -405,6 +407,7 @@ export default [
 	{
 		id: 'word-17',
 		word: 'dinosaur',
+		chestMin: 'EPIC',
 		audio: dinosaurAudioUrl,
 		giphyEmbeds: [
 			{
@@ -426,6 +429,7 @@ export default [
 	{
 		id: 'word-18',
 		word: 'snake',
+		chestMin: 'EPIC',
 		audio: snakeAudioUrl,
 		giphyEmbeds: [
 			{
@@ -447,6 +451,7 @@ export default [
 	{
 		id: 'word-19',
 		word: 'cow',
+		chestMin: 'RARE',
 		audio: cowAudioUrl,
 		giphyEmbeds: [
 			{
@@ -468,6 +473,7 @@ export default [
 	{
 		id: 'word-20',
 		word: 'worm',
+		chestMin: 'RARE',
 		audio: wormAudioUrl,
 		giphyEmbeds: [
 			{

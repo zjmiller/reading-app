@@ -4,11 +4,22 @@ import getCurrentEngagement from '../selectors/getCurrentEngagement';
 
 export default function createChest(chestId) {
 	return (dispatch, getState) => {
-		const status = 
-			Math.random() > 0.7
-			? 
-				(Math.random() > 0.7 ? 'EPIC' : 'RARE') 
-			: 'NORMAL';
+		const engagement = getCurrentEngagement(getState());
+		const word = getState().words.find(word => word.id === engagement.wordId);
+		const chestMin = word.chestMin;
+		
+		let status;
+		if (chestMin === 'EPIC') {
+			status = 'EPIC';
+		} else if (chestMin === 'RARE') {
+			status = Math.random() > 0.7 ? 'EPIC' : 'RARE';
+		} else {
+			status = 
+				Math.random() > 0.7
+				? 
+					(Math.random() > 0.7 ? 'EPIC' : 'RARE') 
+				: 'NORMAL';
+		}
 		
 		const rewardCards = [];
 		for (let i = 0; i < 3; i++) {
@@ -17,7 +28,6 @@ export default function createChest(chestId) {
 			rewardCards[i] = rewardCardId;
 		}
 		
-		const engagement = getCurrentEngagement(getState());
 		const engagementId = engagement.id;
 		
 		dispatch({
