@@ -1,19 +1,33 @@
+
 import batAudioUrl from '../assets/sounds/bat.m4a';
 import beeAudioUrl from '../assets/sounds/bee.m4a';
 import birdAudioUrl from '../assets/sounds/bird.m4a';
 import catAudioUrl from '../assets/sounds/cat.m4a';
+
+import cowAudioUrl from '../assets/sounds/cow.m4a';
+
 import crabAudioUrl from '../assets/sounds/crab.m4a';
+
+import dinosaurAudioUrl from '../assets/sounds/dinosaur.m4a';
+
 import dogAudioUrl from '../assets/sounds/dog.m4a';
 import fishAudioUrl from '../assets/sounds/fish.m4a';
 import foxAudioUrl from '../assets/sounds/fox.m4a';
 import frogAudioUrl from '../assets/sounds/frog.m4a';
+
+import iglooAudioUrl from '../assets/sounds/igloo.m4a';
+
 import jumpAudioUrl from '../assets/sounds/jump.m4a';
 import pigAudioUrl from '../assets/sounds/pig.m4a';
 import ratAudioUrl from '../assets/sounds/rat.m4a';
 import runAudioUrl from '../assets/sounds/run.m4a';
 import sharkAudioUrl from '../assets/sounds/shark.m4a';
+
+import snakeAudioUrl from '../assets/sounds/snake.m4a';
+
 import sunAudioUrl from '../assets/sounds/sun.m4a';
 
+import wormAudioUrl from '../assets/sounds/worm.m4a';
 
 export default [
 	{
@@ -363,6 +377,111 @@ export default [
 				iframeWidth: '480',
 				iframeHeight: '270',
 				aHref: 'https://giphy.com/gifs/originals-l2Sq6SNEYMDQ8NtdK',
+			},
+		],
+	},
+	
+	{
+		id: 'word-16',
+		word: 'igloo',
+		audio: iglooAudioUrl,
+		giphyEmbeds: [
+			{
+				iframeSrc: 'UKyqX1eV8Tgl2',
+				iframeWidth: '480',
+				iframeHeight: '360',
+				aHref: 'https://giphy.com/gifs/satisfying-igloo-UKyqX1eV8Tgl2',
+			},
+			
+			{
+				iframeSrc: 'l2Sq6SNEYMDQ8NtdK',
+				iframeWidth: '480',
+				iframeHeight: '276',
+				aHref: 'https://giphy.com/gifs/eskimo-ni2wk9VTYMw9O',
+			},
+		],
+	},
+	
+	{
+		id: 'word-17',
+		word: 'dinosaur',
+		audio: dinosaurAudioUrl,
+		giphyEmbeds: [
+			{
+				iframeSrc: 'fRzQRQ2Fux1Is',
+				iframeWidth: '480',
+				iframeHeight: '248',
+				aHref: 'https://giphy.com/gifs/animated-dinosaur-brontosaurus-fRzQRQ2Fux1Is',
+			},
+			
+			{
+				iframeSrc: 'iVqXV4vE4DDYk',
+				iframeWidth: '480',
+				iframeHeight: '270',
+				aHref: 'https://giphy.com/gifs/dinosaur-iVqXV4vE4DDYk',
+			},
+		],
+	},
+	
+	{
+		id: 'word-18',
+		word: 'snake',
+		audio: snakeAudioUrl,
+		giphyEmbeds: [
+			{
+				iframeSrc: 'jCOyMYDIe7Yd2',
+				iframeWidth: '480',
+				iframeHeight: '270',
+				aHref: 'https://giphy.com/gifs/snake-jCOyMYDIe7Yd2',
+			},
+			
+			{
+				iframeSrc: 'PL3xU8RKdMfF6',
+				iframeWidth: '480',
+				iframeHeight: '270',
+				aHref: 'https://giphy.com/gifs/snake-PL3xU8RKdMfF6',
+			},
+		],
+	},
+	
+	{
+		id: 'word-19',
+		word: 'cow',
+		audio: cowAudioUrl,
+		giphyEmbeds: [
+			{
+				iframeSrc: 'h55EUEsTG9224',
+				iframeWidth: '480',
+				iframeHeight: '317',
+				aHref: 'https://giphy.com/gifs/reactiongifs-h55EUEsTG9224',
+			},
+			
+			{
+				iframeSrc: 'lJzjS0e4DrFIs',
+				iframeWidth: '480',
+				iframeHeight: '360',
+				aHref: 'https://giphy.com/gifs/cow-lJzjS0e4DrFIs',
+			},
+		],
+	},
+	
+	{
+		id: 'word-20',
+		word: 'worm',
+		audio: wormAudioUrl,
+		giphyEmbeds: [
+			{
+				iframeSrc: '9ZGwMvzxz2SNa',
+				iframeWidth: '480',
+				iframeHeight: '270',
+				aHref: 'https://giphy.com/gifs/puffinrock-wiggle-worm-9ZGwMvzxz2SNa',
+			},
+			
+			{
+				iframeSrc: 'xTiTntdVHPOnIhK608',
+				iframeWidth: '480',
+				iframeHeight: '360',
+				aHref: 'https://giphy.com/gifs/inch-rubber-hose-worm-xTiTntdVHPOnIhK608',
 			},
 		],
 	},
