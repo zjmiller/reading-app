@@ -4,11 +4,16 @@ import getCurrentEngagement from '../selectors/getCurrentEngagement';
 
 export default function createChest(chestId) {
 	return (dispatch, getState) => {
-		const isPremium = Math.random() > 0.1 ? true : false;
+		const status = 
+			Math.random() > 0.8
+			? 
+				(Math.random() > 0.8 ? 'RARE' : 'EPIC') 
+			: 'NORMAL';
+		
 		const rewardCards = [];
 		for (let i = 0; i < 3; i++) {
 			const rewardCardId = shortid.generate();
-			dispatch(createRewardCard(rewardCardId, isPremium));
+			dispatch(createRewardCard(rewardCardId, status));
 			rewardCards[i] = rewardCardId;
 		}
 		
@@ -18,7 +23,7 @@ export default function createChest(chestId) {
 		dispatch({
 			type: 'CREATE_CHEST',
 			id: chestId,
-			isPremium,
+			status,
 			rewardCards,
 			engagementId,
 		});

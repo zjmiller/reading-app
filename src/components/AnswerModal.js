@@ -19,7 +19,7 @@ class AnswerModal extends Component {
 							alignItems: 'center',
 							borderRadius: '5px',
 							display: 'flex',
-							height: '210px',
+							height: '100px',
 							justifyContent: 'center',
 						}}
 					>

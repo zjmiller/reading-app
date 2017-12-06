@@ -167,7 +167,7 @@ export default function sessionReducer(state = initialState, action) {
 						{},
 						item,
 						{
-							cooldownTimer: 9,
+							cooldownTimer: action.cooldown,
 						}
 					);
 				}),

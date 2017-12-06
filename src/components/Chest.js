@@ -12,13 +12,18 @@ class Chest extends Component {
 			handleOpenChest,
 		} = this.props;
 		
+		let filter;
+		if (chest.status === 'PREMIUM') filter = 'saturate(500%)';
+		if (chest.status === 'RARE') filter = 'saturate(500%) hue-rotate(210deg) contrast(120%) brightness(150%)';
+		if (chest.status === 'EPIC') filter = 'saturate(500%) hue-rotate(290deg) contrast(120%) brightness(150%)';
+		
     return (
 			<img
 				onClick={handleOpenChest}
 				src={chestImgSrc}
 				style={{
 					cursor: 'pointer',
-					filter: chest.isPremium ? 'saturate(500%)' : '',
+					filter: filter,
 					opacity: 1,
 					transition: 'opacity 0.4s',
 					width: '100%',

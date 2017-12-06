@@ -12,7 +12,7 @@ export default [
 		imgStyles: {
 			filter: 'saturate(300%) hue-rotate(180deg)',
 		},
-		cooldown: 10,
+		cooldown: 8,
 		effects: [
 			'MOVE_ALL_LETTERS_BACK_TO_POOL',
 			'HIGHLIGHT_TILES_IN_WORD',
@@ -20,11 +20,11 @@ export default [
 		cost: [
 			{
 				moneyType: 'GOLD_COIN',
-				quantity: 3000,
+				quantity: 30,
 			},
 			{
 				moneyType: 'BLUE_GEM',
-				quantity: 40,
+				quantity: 1,
 			},
 		],
 	},
@@ -37,7 +37,7 @@ export default [
 		imgStyles: {
 			backgroundColor: '#fefefe',
 		},
-		cooldown: 10,
+		cooldown: 7,
 		effects: [
 			'FLASH_ANSWER_MODAL',
 		],

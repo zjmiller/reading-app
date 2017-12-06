@@ -30,6 +30,7 @@ export default function useItem(itemId) {
 		dispatch({
 			type: 'START_COOLDOWN_TIMER',
 			itemId,
+			cooldown: item.cooldown,
 		})
 	};
 }

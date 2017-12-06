@@ -1,16 +1,26 @@
 import shortid from 'shortid';
 
-export default function createRewardCard(rewardCardId, isPremium) {
+export default function createRewardCard(rewardCardId, status) {
 	return (dispatch, getState) => {
 		const rewardTypeNumber = Math.ceil(Math.random() * 40);
 		
 		let rewardType;
-		if (isPremium) {
-			if (rewardTypeNumber <= 10) {
+		if (status === 'RARE') {
+			if (rewardTypeNumber <= 20) {
 				rewardType = 'GOLD_COIN';
-			} else if (rewardTypeNumber <= 20) {
+			} else if (rewardTypeNumber <= 27) {
 				rewardType = 'BLUE_GEM';
-			} else if (rewardTypeNumber <= 30) {
+			} else if (rewardTypeNumber <= 34) {
+				rewardType = 'GREEN_GEM';
+			} else if (rewardTypeNumber <= 40) {
+				rewardType = 'RED_GEM';
+			}
+		} else if (status === 'EPIC') {
+			if (rewardTypeNumber <= 20) {
+				rewardType = 'GOLD_COIN';
+			} else if (rewardTypeNumber <= 27) {
+				rewardType = 'BLUE_GEM';
+			} else if (rewardTypeNumber <= 34) {
 				rewardType = 'GREEN_GEM';
 			} else if (rewardTypeNumber <= 40) {
 				rewardType = 'RED_GEM';
@@ -29,12 +39,16 @@ export default function createRewardCard(rewardCardId, isPremium) {
 		
 		let quantity;
 		if (rewardType === 'GOLD_COIN') {
-			if (isPremium) quantity = 100;
-			else quantity = Math.ceil(Math.random() * 10);
+			if (status === 'RARE') quantity = 10 * Math.ceil(Math.random() * 10);
+			else if (status === 'EPIC') quantity = 100 * Math.ceil(Math.random() * 10);
+			else quantity = 1 * Math.ceil(Math.random() * 10);
 		} else {
-			if (isPremium) quantity = 3;
+			if (status === 'RARE') quantity = 3;
+			else if (status === 'EPIC') quantity = 10;
 			else quantity = 1;
 		}
+		
+		const isPremium = status !== 'NORMAL';
 		
 		dispatch({
 			type: 'CREATE_REWARD_CARD',
