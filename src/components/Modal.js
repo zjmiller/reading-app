@@ -13,7 +13,7 @@ class SuccessModal extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			cardWidth: 0,
+			cardWidth: !this.props.receivingRewardState === 'CHEST_OPENED' ? 0 : 180,
 			testFlipped: false,
 		};
 	}
