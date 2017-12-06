@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
 import { connect } from 'react-redux';
 
+import AnswerModal from './AnswerModal';
 import Engagement from './Engagement';
 import ScreenLinks from './ScreenLinks';
 import Store from './Store';
@@ -41,6 +42,7 @@ class App extends Component {
 					{onEngagementScreen && <Engagement />}
 					{onStoreScreen && <Store />}
 	      </div>
+				<AnswerModal />
 			</DragDropContext>
     );
   }

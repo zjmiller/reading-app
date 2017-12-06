@@ -10,9 +10,30 @@ const initialState = {
 	},
 	wordsSoFar: [],
 	items: [],
+	showingAnswerModal: false,
 };
 
 export default function sessionReducer(state = initialState, action) {
+	if (action.type === 'SHOW_ANSWER_MODAL') {
+		return Object.assign(
+			{},
+			state,
+			{
+				showingAnswerModal: true,
+			}
+		);
+	}
+	
+	if (action.type === 'HIDE_ANSWER_MODAL') {
+		return Object.assign(
+			{},
+			state,
+			{
+				showingAnswerModal: false,
+			}
+		);
+	}
+	
 	if (action.type === 'SET_WEALTH') {
 		return Object.assign(
 			{},

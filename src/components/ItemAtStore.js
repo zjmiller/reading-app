@@ -28,7 +28,7 @@ class ItemAtStore extends Component {
 					if (!playerCanAffordItem) return;
 					handleBuyItemAtStore(item.id)
 				}}
-				style={{
+				style={Object.assign({
 					backgroundColor: '#f5f5dc',
 					boxShadow: '2px 2px 5px #333',
 					cursor: playerAlreadyOwnsItem || !playerCanAffordItem ? 'auto' : 'pointer',
@@ -36,16 +36,15 @@ class ItemAtStore extends Component {
 					height: '120px',
 					padding: '10px',
 					width: '350px',
-				}}
+				}, this.props.style)}
 			>
 			
 				<img 
 					src={item.imgSrc}
-					style={{
+					style={Object.assign({
 						boxShadow: '0 0 1px #333',
-						filter: 'saturate(300%) hue-rotate(180deg)',
 						width: '100px',
-					}}
+					}, item.imgStyles)}
 				/>
 				<div
 					style={{

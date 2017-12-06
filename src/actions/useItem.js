@@ -13,6 +13,18 @@ export default function useItem(itemId) {
 					type: 'HIGHLIGHT_TILES_IN_WORD',
 				});
 			}
+			
+			if (effectName === 'FLASH_ANSWER_MODAL') {
+				dispatch({
+					type: 'SHOW_ANSWER_MODAL',
+				});
+				
+				setTimeout(() => {
+					dispatch({
+						type: 'HIDE_ANSWER_MODAL',
+					});
+				}, 2000);
+			}
 		});
 		
 		dispatch({

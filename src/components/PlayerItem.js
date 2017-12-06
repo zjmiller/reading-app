@@ -27,9 +27,8 @@ class PlayerItem extends Component {
 					style={Object.assign({
 						boxShadow: '1px 1px 3px #333',
 						cursor: 'pointer',
-						filter: 'saturate(300%) hue-rotate(180deg)',
 						width: '60px',
-					})}
+					}, item.imgStyles)}
 				/>
 				{
 					cooldownTimer > 0

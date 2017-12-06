@@ -1,5 +1,6 @@
 import shortid from 'shortid';
 
+import bookOfSecretsImgSrc from '../assets/images/tome.png';
 import spyglassImgSrc from '../assets/images/spyglass.png';
 
 export default [
@@ -8,6 +9,9 @@ export default [
 		type: 'MAGIC_SPYGLASS',
 		name: 'Magic Spyglass',
 		imgSrc: spyglassImgSrc,
+		imgStyles: {
+			filter: 'saturate(300%) hue-rotate(180deg)',
+		},
 		cooldown: 10,
 		effects: [
 			'MOVE_ALL_LETTERS_BACK_TO_POOL',
@@ -23,5 +27,29 @@ export default [
 				quantity: 40,
 			},
 		],
-	}
+	},
+	
+	{
+		id: 'item-2',
+		type: 'BOOK_OF_SECRETS',
+		name: 'Book of Secrets',
+		imgSrc: bookOfSecretsImgSrc,
+		imgStyles: {
+			backgroundColor: '#fefefe',
+		},
+		cooldown: 10,
+		effects: [
+			'FLASH_ANSWER_MODAL',
+		],
+		cost: [
+			{
+				moneyType: 'GOLD_COIN',
+				quantity: 50,
+			},
+			{
+				moneyType: 'RED_GEM',
+				quantity: 1,
+			},
+		],
+	},
 ];

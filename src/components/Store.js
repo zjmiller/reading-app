@@ -18,7 +18,7 @@ class Store extends Component {
 					zIndex: 2,
 				}}
 			>
-        { items.map(item => <ItemAtStore key={item.id} item={item} />)}
+        { items.map(item => <ItemAtStore key={item.id} item={item} style={{ marginBottom: '10px' }} />)}
       </div>
 			</div>
     );
