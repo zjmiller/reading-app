@@ -8,8 +8,6 @@ import rootReducer from '../reducers/rootReducer';
 
 const store = createStore(rootReducer, fetchState(), applyMiddleware(thunk, createLogger({ collapsed: true })));
 
-console.log(store.getState())
-
 store.subscribe(() => saveState(store.getState()));
 
 export default store;

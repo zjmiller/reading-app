@@ -7,7 +7,7 @@ import backBtnImgSrc from '../assets/images/back-arrow.svg';
 class BackBtn extends Component {
   render() {
 		const { handleNavigateBack, thereIsPrevScreen } = this.props;
-		console.log(thereIsPrevScreen)
+		
     return (
       <div
 				onClick={() => thereIsPrevScreen && handleNavigateBack()}

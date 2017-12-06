@@ -12,10 +12,8 @@ export default function wordsReducers(state = initialState, action) {
 	}
 	
 	if (action.type === 'CREATE_CHEST') {
-		console.log('HERE 1', action)
 		return state.map(engagement => {
 			if (engagement.id !== action.engagementId) return engagement;
-			console.log('HERE 2')
 			return Object.assign(
 				{},
 				engagement,

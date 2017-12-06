@@ -73,7 +73,7 @@ class SuccessModal extends Component {
 
 const mapStateToProps = state => {
   return {
-		areAllRewardCardsRevealed: console.log(areAllRewardCardsRevealed(state)) || areAllRewardCardsRevealed(state),
+		areAllRewardCardsRevealed: areAllRewardCardsRevealed(state),
 		isReceivingReward: state.session.engagementState === 'RECEIVING_REWARD',	
 		receivingRewardState: state.session.receivingRewardState,
   };

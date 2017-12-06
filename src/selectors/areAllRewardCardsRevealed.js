@@ -11,7 +11,5 @@ export default function areAllRewardCardsRevealed(state) {
 		state.rewardCards.find(rewardCard => rewardCard.id === rewardCardId)
 	);
 	
-	console.log(rewardCards);
-	console.log(rewardCards.reduce((acc, rewardCard) => { return acc && rewardCard.isRevealed }, true))
 	return rewardCards.reduce((acc, rewardCard) => { return acc && rewardCard.isRevealed }, true);
 }
