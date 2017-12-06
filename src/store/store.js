@@ -18,11 +18,13 @@ const modifiedState = {
 	session: savedState.session,
 }
 
-console.log(modifiedState);
-
 const store = createStore(rootReducer, modifiedState, applyMiddleware(thunk, createLogger({ collapsed: true })));
 
-console.log(store.getState());
+if (store.getState().session.showingAnswerModal) {
+	store.dispatch({
+		type: 'HIDE_ANSWER_MODAL',
+	});
+}
 
 store.subscribe(() => saveState(store.getState()));
 
