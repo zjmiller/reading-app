@@ -7,7 +7,7 @@ export default function createChest(chestId) {
 		const status = 
 			Math.random() > 0.7
 			? 
-				(Math.random() > 0.7 ? 'RARE' : 'EPIC') 
+				(Math.random() > 0.7 ? 'EPIC' : 'RARE') 
 			: 'NORMAL';
 		
 		const rewardCards = [];
