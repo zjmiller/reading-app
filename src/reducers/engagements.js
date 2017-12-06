@@ -24,6 +24,50 @@ export default function wordsReducers(state = initialState, action) {
 		});
 	}
 	
+	if (action.type === 'MOVE_LETTER_TO_BACK_OF_POOL') {
+		let newLettersPool = state[state.length - 1].lettersPool.concat();
+		let newAnswerField = state[state.length - 1].answerField.concat();
+		
+		newAnswerField = newAnswerField.filter(letterId => letterId !== action.letterId);
+		newLettersPool = newLettersPool.concat(action.letterId);
+		
+		return state.map((engagement, i) => {
+			if (i < state.length - 1) return engagement;
+			else {
+				return Object.assign(
+					{},
+					engagement,
+					{
+						answerField: newAnswerField,
+						lettersPool: newLettersPool,
+					}
+				);
+			}
+		})
+	}
+	
+	if (action.type === 'MOVE_LETTER_TO_BACK_OF_ANSWER_FIELD') {
+		let newLettersPool = state[state.length - 1].lettersPool.concat();
+		let newAnswerField = state[state.length - 1].answerField.concat();
+		
+		newAnswerField = newAnswerField.concat(action.letterId);
+		newLettersPool = newLettersPool.filter(letterId => letterId !== action.letterId);
+		
+		return state.map((engagement, i) => {
+			if (i < state.length - 1) return engagement;
+			else {
+				return Object.assign(
+					{},
+					engagement,
+					{
+						answerField: newAnswerField,
+						lettersPool: newLettersPool,
+					}
+				);
+			}
+		})
+	}
+	
 	if (action.type === 'MOVE_ALL_LETTERS_BACK_TO_POOL') {
 		let newLettersPool = state[state.length - 1].lettersPool.concat(state[state.length - 1].answerField);
 		let newAnswerField = [];

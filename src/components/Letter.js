@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 import { connect } from 'react-redux';
+
+import toggleLetterPosition from '../actions/toggleLetterPosition';
 import woodTextureUrl from '../assets/images/wood-texture.png';
 
 class Letter extends Component {
   render() {
-		const { letter } = this.props;
+		const {
+			handleToggleLetterPosition,
+			letter,
+		} = this.props;
 		
     return (
 			<Draggable draggableId={letter.id}>
 			{
 				(provided, snapshot) => (
-					<div>
+					<div
+						onDoubleClick={() => handleToggleLetterPosition(letter.id)}
+					>
 						<div
 							ref={provided.innerRef}
 							style={Object.assign({}, provided.draggableStyle, {
@@ -60,4 +67,8 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Letter);
+const mapDispatchToProps = dispatch => ({
+  handleToggleLetterPosition: letterId => dispatch(toggleLetterPosition(letterId)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Letter);
