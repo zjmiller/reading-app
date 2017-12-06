@@ -6,21 +6,21 @@ export default function createRewardCard(rewardCardId, status) {
 		
 		let rewardType;
 		if (status === 'RARE') {
-			if (rewardTypeNumber <= 20) {
+			if (rewardTypeNumber <= 25) {
 				rewardType = 'GOLD_COIN';
-			} else if (rewardTypeNumber <= 27) {
+			} else if (rewardTypeNumber <= 30) {
 				rewardType = 'BLUE_GEM';
-			} else if (rewardTypeNumber <= 34) {
+			} else if (rewardTypeNumber <= 35) {
 				rewardType = 'GREEN_GEM';
 			} else if (rewardTypeNumber <= 40) {
 				rewardType = 'RED_GEM';
 			}
 		} else if (status === 'EPIC') {
-			if (rewardTypeNumber <= 20) {
+			if (rewardTypeNumber <= 35) {
 				rewardType = 'GOLD_COIN';
-			} else if (rewardTypeNumber <= 27) {
+			} else if (rewardTypeNumber <= 30) {
 				rewardType = 'BLUE_GEM';
-			} else if (rewardTypeNumber <= 34) {
+			} else if (rewardTypeNumber <= 35) {
 				rewardType = 'GREEN_GEM';
 			} else if (rewardTypeNumber <= 40) {
 				rewardType = 'RED_GEM';

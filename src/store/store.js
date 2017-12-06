@@ -26,6 +26,13 @@ if (store.getState().session.showingAnswerModal) {
 	});
 }
 
+if (store.getState().items.indexOf('item-1') === -1) {
+	store.dispatch({
+		type: 'BUY_ITEM_AT_STORE',
+		itemId: 'item-1',
+	});
+}
+
 store.subscribe(() => saveState(store.getState()));
 
 export default store;

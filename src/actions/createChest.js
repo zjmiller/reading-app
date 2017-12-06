@@ -5,9 +5,9 @@ import getCurrentEngagement from '../selectors/getCurrentEngagement';
 export default function createChest(chestId) {
 	return (dispatch, getState) => {
 		const status = 
-			Math.random() > 0.8
+			Math.random() > 0.7
 			? 
-				(Math.random() > 0.8 ? 'RARE' : 'EPIC') 
+				(Math.random() > 0.7 ? 'RARE' : 'EPIC') 
 			: 'NORMAL';
 		
 		const rewardCards = [];
