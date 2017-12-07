@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import getCurrentEngagement from '../selectors/getCurrentEngagement';
+
 class EngagementBackground extends Component {
   render() {
 		const { backgroundImageSrc } = this.props;
@@ -24,7 +26,7 @@ class EngagementBackground extends Component {
 }
 
 const mapStateToProps = state => {
-	const engagement = state.engagements[state.engagements.length - 1];
+	const engagement = getCurrentEngagement(state);
 	
   return {
 		backgroundImageSrc: engagement.backgroundImageSrc,

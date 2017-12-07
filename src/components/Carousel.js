@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Slider  from 'react-slick';
 
+import getCurrentEngagement from '../selectors/getCurrentEngagement';
+
 const settings = {
 	adaptiveHeight: true,
 	fade: true,
@@ -69,7 +71,7 @@ class Carousel extends Component {
 }
 
 const mapStateToProps = state => {
-	const engagement = state.engagements[state.engagements.length - 1];
+	const engagement = getCurrentEngagement(state);
 	const word = state.words.find(word => word.id === engagement.wordId);
 	return {
 		giphyEmbeds: word.giphyEmbeds || [],

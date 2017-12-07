@@ -34,8 +34,8 @@ class Chest extends Component {
 }
 
 const mapStateToProps = state => {
-	const currentEngagement = getCurrentEngagement(state);
-	const chest = state.chests.find(chest => chest.id === currentEngagement.chestId);
+	const engagement = getCurrentEngagement(state);
+	const chest = state.chests.find(chest => chest.id === engagement.chestId);
 	
   return {
 		chest,

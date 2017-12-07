@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Droppable } from 'react-beautiful-dnd';
 import { connect } from 'react-redux';
+
 import Letter from './Letter';
+
+import getCurrentEngagement from '../selectors/getCurrentEngagement';
 
 class AnswerField extends Component {
   render() {
@@ -61,8 +64,8 @@ class AnswerField extends Component {
 }
 
 const mapStateToProps = state => {
-	if (state.engagements.length === 0) return {};
-	const engagement = state.engagements[state.engagements.length - 1];
+	const engagement = getCurrentEngagement(state);
+	if (!engagement) return;
 	const letters = engagement.answerField.map(letterId => state.letters.find(letter => letter.id === letterId));
   return {
 		letters,

@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Droppable } from 'react-beautiful-dnd';
 import { connect } from 'react-redux';
+
 import Letter from './Letter';
+
+import getCurrentEngagement from '../selectors/getCurrentEngagement';
 
 class LettersPool extends Component {
   render() {
@@ -33,7 +36,7 @@ class LettersPool extends Component {
 }
 
 const mapStateToProps = state => {
-	const engagement = state.engagements[state.engagements.length - 1];
+	const engagement = getCurrentEngagement(state);
 	const letters = engagement.lettersPool.map(letterId => state.letters.find(letter => letter.id === letterId));
 	
   return {

@@ -4,6 +4,9 @@ import { Modal } from 'react-bootstrap';
 
 import NonDraggableLetter from './NonDraggableLetter';
 
+import getCurrentEngagement from '../selectors/getCurrentEngagement';
+import getWordValOfEngagement from '../selectors/getWordValOfEngagement';
+
 class AnswerModal extends Component {
 	render() {
 		const {
@@ -40,16 +43,16 @@ class AnswerModal extends Component {
 }
 
 const mapStateToProps = state => {
-	const engagement = state.engagements[state.engagements.length - 1];
+	const engagement = getCurrentEngagement(state);
 	
 	if (!engagement) return {
-		isShowing: state.session.showingAnswerModal,
+		isShowing: false,
 		letters: [],
 	};
 	
-	const word = state.words.find(word => word.id === engagement.wordId);
+	const wordVal = getWordValOfEngagement(state, engagement);
 	
-	const letters = word.word.split('');
+	const letters = wordVal.split('');
 	
   return {
 		isShowing: state.session.showingAnswerModal,

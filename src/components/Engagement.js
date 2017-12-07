@@ -10,6 +10,9 @@ import PlayerItem from './PlayerItem';
 import ToggleCaseBtn from './ToggleCaseBtn';
 import WordAudioIcon from './WordAudioIcon';
 
+import getCurrentEngagement from '../selectors/getCurrentEngagement';
+import getWordObjOfEngagement from '../selectors/getWordObjOfEngagement';
+
 class Engagement extends Component {
   render() {
 		const {
@@ -70,8 +73,8 @@ class Engagement extends Component {
 }
 
 const mapStateToProps = state => {
-	const engagement = state.engagements[state.engagements.length - 1];
-	const word = state.words.find(word => word.id === engagement.wordId);
+	const engagement = getCurrentEngagement(state);
+	const word = getWordObjOfEngagement(state, engagement);
 	const letters = engagement.lettersPool;
 	const playerItems = state.session.items;
   return {
