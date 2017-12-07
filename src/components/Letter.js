@@ -10,6 +10,7 @@ class Letter extends Component {
 		const {
 			handleToggleLetterPosition,
 			letter,
+			showingUpperCase,
 		} = this.props;
 		
     return (
@@ -49,7 +50,7 @@ class Letter extends Component {
 								}}
 								{...provided.dragHandleProps}
 							>
-								{ letter.letter }
+								{ showingUpperCase ? letter.letter : letter.letter.toLowerCase() }
 							</div>
 			      </div>	
 						{ provided.placeholder }
@@ -63,7 +64,7 @@ class Letter extends Component {
 
 const mapStateToProps = state => {
   return {
-
+		showingUpperCase: state.session.showingUpperCase,
   };
 };
 

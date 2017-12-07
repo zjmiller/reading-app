@@ -11,9 +11,20 @@ const initialState = {
 	wordsSoFar: [],
 	items: [],
 	showingAnswerModal: false,
+	showingUpperCase: true,
 };
 
 export default function sessionReducer(state = initialState, action) {
+	
+	if (action.type === 'TOGGLE_LETTER_CASE') {
+		return Object.assign(
+			{},
+			state,
+			{
+				showingUpperCase: !state.showingUpperCase,
+			}
+		);
+	}
 	
 	if (action.type === 'CLEAR_COMPLETED_WORDS_CACHE') {
 		return Object.assign(

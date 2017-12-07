@@ -19,12 +19,15 @@ class WordAudioIcon extends Component {
 	}
 	
   render() {
-		const { word } = this.props;
+		const {
+			style,
+			word,
+		} = this.props;
 		
     return (
       <div 
 				onClick={() => this.state.playingAudio ? '' : this.playAudio(word && word.audio)}
-				style={{
+				style={Object.assign({
 					alignItems: 'center',
 					background: 'rgba(250, 250, 251, 0.95)',
 					boxShadow: '0 0 10px #000',
@@ -36,7 +39,7 @@ class WordAudioIcon extends Component {
 					opacity: this.state.playingAudio ? 0.5 : 1,
 					userSelect: 'none',
 					width: '60px',
-				}}
+				}, style)}
 			>
         <img src={speakerIconImgSrc} style={{ width: '40px' }}/>
       </div>

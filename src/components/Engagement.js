@@ -7,6 +7,7 @@ import EngagementBackground from './EngagementBackground';
 import LettersPool from './LettersPool';
 import Modal from './Modal';
 import PlayerItem from './PlayerItem';
+import ToggleCaseBtn from './ToggleCaseBtn';
 import WordAudioIcon from './WordAudioIcon';
 
 class Engagement extends Component {
@@ -40,10 +41,18 @@ class Engagement extends Component {
 								display: 'flex',
 							}}
 						>
-							<WordAudioIcon word={word} />
+							<ToggleCaseBtn />
+							<WordAudioIcon
+								style={{ marginLeft: '10px' }}
+								word={word}
+							/>
 							{
 								playerItems.map((playerItem, i) =>
-									<PlayerItem key={i} playerItem={playerItem} style={{ marginLeft: '10px' }}/>
+									<PlayerItem 
+										key={i}
+										playerItem={playerItem}
+										style={{ marginLeft: '10px' }}
+									/>
 								)
 							}
 						</div>
