@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button, Modal } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 
 import closeRewardModal from '../actions/closeRewardModal';
 import backgroundImageSrc from '../assets/images/battleback8.png';
@@ -35,8 +35,6 @@ class SuccessModal extends Component {
 	
   render() {
 		const {
-			areAllRewardCardsRevealed,
-			handleCloseRewardModal,
 			isReceivingReward,
 			receivingRewardState,
 		} = this.props;

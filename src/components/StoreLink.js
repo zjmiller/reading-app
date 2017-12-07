@@ -25,7 +25,7 @@ class StoreLink extends Component {
 					width: '40px',
 				}}
 			>
-        <img src={storeIconImgSrc} style={{ width: '20px' }} />
+        <img alt="Link to Store Screen" src={storeIconImgSrc} style={{ width: '20px' }} />
       </div>
     );
   }

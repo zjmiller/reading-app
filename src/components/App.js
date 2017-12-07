@@ -24,7 +24,6 @@ class App extends Component {
 		const {
 			onEngagementScreen,
 			onStoreScreen,
-			handleCreateAndEnterEngagement, 
 			onDragEndHandleLetterDrop,
 		} = this.props;
 		

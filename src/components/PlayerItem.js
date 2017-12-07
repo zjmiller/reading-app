@@ -23,6 +23,7 @@ class PlayerItem extends Component {
 				}, style)}
 			>
 				<img 
+					alt={item.name}
 					src={item.imgSrc}
 					style={Object.assign({
 						boxShadow: '1px 1px 3px #333',

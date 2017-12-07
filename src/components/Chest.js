@@ -19,6 +19,7 @@ class Chest extends Component {
 		
     return (
 			<img
+				alt="Treasure Chest"
 				onClick={handleOpenChest}
 				src={chestImgSrc}
 				style={{

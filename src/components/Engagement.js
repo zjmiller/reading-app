@@ -16,8 +16,6 @@ import getWordObjOfEngagement from '../selectors/getWordObjOfEngagement';
 class Engagement extends Component {
   render() {
 		const {
-			letters,
-			isReceivingReward,
 			playerItems,
 			word,
 		} = this.props;
@@ -75,10 +73,8 @@ class Engagement extends Component {
 const mapStateToProps = state => {
 	const engagement = getCurrentEngagement(state);
 	const word = getWordObjOfEngagement(state, engagement);
-	const letters = engagement.lettersPool;
 	const playerItems = state.session.items;
   return {
-		letters,
 		playerItems,
 		word,
   };

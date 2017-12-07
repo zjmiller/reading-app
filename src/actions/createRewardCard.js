@@ -1,5 +1,3 @@
-import shortid from 'shortid';
-
 export default function createRewardCard(rewardCardId, status) {
 	return (dispatch, getState) => {
 		const rewardTypeNumber = Math.ceil(Math.random() * 40);

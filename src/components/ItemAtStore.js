@@ -40,6 +40,7 @@ class ItemAtStore extends Component {
 			>
 			
 				<img 
+					alt={item.name}
 					src={item.imgSrc}
 					style={Object.assign({
 						boxShadow: '0 0 1px #333',

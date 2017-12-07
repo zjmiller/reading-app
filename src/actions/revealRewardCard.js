@@ -1,7 +1,4 @@
-import loadNextEngagement from './loadNextEngagement';
-
-import gainReward from '../actions/gainReward';
-import areAllRewardCardsRevealed from '../selectors/areAllRewardCardsRevealed';
+import gainReward from './gainReward';
 
 export default function revealRewardCard(rewardCardId){
 	return (dispatch, getState) => {

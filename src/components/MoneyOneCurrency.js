@@ -27,7 +27,7 @@ class MoneyOneCurrency extends Component {
 					userSelect: 'none',
 				}, style)}
 			>
-				<img src={imgSrc} style={{ width: '30px' }} />
+				<img alt="Some Money or a Gem" src={imgSrc} style={{ width: '30px' }} />
 				<span>{quantity}</span>
 			</div>
     );

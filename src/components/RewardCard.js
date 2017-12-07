@@ -43,6 +43,7 @@ class RewardCard extends Component {
 			<div className={this.state.isFlipped ? 'flipcard is-flipped' : 'flipcard'}>
 				<div className="flipcard--front">
 					<img
+						alt="Back of Card"
 						className={isPremium ? 'premium-cardback' : ''}
 						onClick={() => {
 							handleRevealRewardCard(rewardCardId);
@@ -88,7 +89,7 @@ class RewardCard extends Component {
 					>
 						{ quantity }
 					</span>
-					<img src={imgSrc} />
+					<img alt="Card Reward" src={imgSrc} />
 				</div>
 			</div>
     );

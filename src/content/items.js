@@ -1,5 +1,3 @@
-import shortid from 'shortid';
-
 import bookOfSecretsImgSrc from '../assets/images/tome.png';
 import spyglassImgSrc from '../assets/images/spyglass.png';
 

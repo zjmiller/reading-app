@@ -25,7 +25,7 @@ class BackBtn extends Component {
 					width: '40px',
 				}}
 			>
-        <img src={backBtnImgSrc} style={{ width: '20px' }} />
+        <img alt="Back Button" src={backBtnImgSrc} style={{ width: '20px' }} />
       </div>
     );
   }

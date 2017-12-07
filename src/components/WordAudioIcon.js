@@ -41,7 +41,7 @@ class WordAudioIcon extends Component {
 					width: '60px',
 				}, style)}
 			>
-        <img src={speakerIconImgSrc} style={{ width: '40px' }}/>
+        <img alt="Speaker Icon" src={speakerIconImgSrc} style={{ width: '40px' }}/>
       </div>
     );
   }
