@@ -137,9 +137,7 @@ export default function wordsReducers(state = initialState, action) {
 		
 		if (action.sourceIndex === action.destinationIndex) return state;
 		
-		const tmp = newAnswerField[action.sourceIndex];
-		newAnswerField[action.sourceIndex] = newAnswerField[action.destinationIndex];
-		newAnswerField[action.destinationIndex] = tmp;
+		newAnswerField.splice(action.destinationIndex, 0, newAnswerField.splice(action.sourceIndex, 1)[0]);
 		
 		return state.map((engagement, i) => {
 			if (i < state.length - 1) return engagement;
@@ -161,9 +159,7 @@ export default function wordsReducers(state = initialState, action) {
 		
 		if (action.sourceIndex === action.destinationIndex) return state;
 		
-		const tmp = newLettersPool[action.sourceIndex];
-		newLettersPool[action.sourceIndex] = newLettersPool[action.destinationIndex];
-		newLettersPool[action.destinationIndex] = tmp;
+		newLettersPool.splice(action.destinationIndex, 0, newLettersPool.splice(action.sourceIndex, 1)[0]);
 		
 		return state.map((engagement, i) => {
 			if (i < state.length - 1) return engagement;
