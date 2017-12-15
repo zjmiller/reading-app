@@ -342,7 +342,6 @@ export default [
 	{
 		id: 'word-14',
 		word: 'shark',
-		chestMin: 'RARE',
 		audio: sharkAudioUrl,
 		giphyEmbeds: [
 			{
@@ -385,7 +384,7 @@ export default [
 	{
 		id: 'word-16',
 		word: 'igloo',
-		chestMin: 'EPIC',
+		chestMin: 'RARE',
 		audio: iglooAudioUrl,
 		giphyEmbeds: [
 			{
@@ -429,7 +428,7 @@ export default [
 	{
 		id: 'word-18',
 		word: 'snake',
-		chestMin: 'EPIC',
+		chestMin: 'RARE',
 		audio: snakeAudioUrl,
 		giphyEmbeds: [
 			{
@@ -488,6 +487,87 @@ export default [
 				iframeWidth: '480',
 				iframeHeight: '360',
 				aHref: 'https://giphy.com/gifs/inch-rubber-hose-worm-xTiTntdVHPOnIhK608',
+			},
+		],
+	},
+	
+	{
+		id: 'word-21',
+		word: 'orca',
+		chestMin: 'EPIC',
+		audio: wormAudioUrl,
+		giphyEmbeds: [
+			{
+				iframeSrc: 'SUi7WCnbmT5Zu',
+				iframeWidth: '480',
+				iframeHeight: '270',
+				aHref: 'https://giphy.com/gifs/qz-SUi7WCnbmT5Zu',
+			},
+			
+			{
+				iframeSrc: 'ZzDd1Xiejorok',
+				iframeWidth: '480',
+				iframeHeight: '323',
+				aHref: 'https://giphy.com/gifs/orca-ZzDd1Xiejorok',
+			},
+		],
+	},
+	
+	{
+		id: 'word-22',
+		word: 'moon',
+		chestMin: 'EPIC',
+		audio: wormAudioUrl,
+		giphyEmbeds: [
+			{
+				iframeSrc: 'siCRldvfdu3Ic',
+				iframeWidth: '480',
+				iframeHeight: '273',
+				aHref: 'https://giphy.com/gifs/moon-dark-siCRldvfdu3Ic',
+			},
+			
+			{
+				iframeSrc: 'i1iA5wwEuRQNq',
+				iframeWidth: '480',
+				iframeHeight: '270',
+				aHref: 'https://giphy.com/gifs/moon-black-and-white-i1iA5wwEuRQNq',
+			},
+		],
+	},
+	
+	{
+		id: 'word-23',
+		word: 'water',
+		chestMin: 'EPIC',
+		audio: wormAudioUrl,
+		giphyEmbeds: [
+			{
+				iframeSrc: 'vnNHyroyEwb4s',
+				iframeWidth: '480',
+				iframeHeight: '270',
+				aHref: 'https://giphy.com/gifs/water-rainfall-vnNHyroyEwb4s',
+			},
+			
+			{
+				iframeSrc: 'VpmPTHI4ZwTm0',
+				iframeWidth: '480',
+				iframeHeight: '263',
+				aHref: 'https://giphy.com/gifs/water-beach-summer-VpmPTHI4ZwTm0',
+			},
+		],
+	},
+	
+	{
+		id: 'word-24',
+		word: 'bug',
+		chestMin: 'EPIC',
+		audio: wormAudioUrl,
+		giphyEmbeds: [
+			{
+				iframeSrc: '44s6SAe8q4X8A',
+				iframeWidth: '480',
+				iframeHeight: '269',
+				aHref: 'https://giphy.com/gifs/interesting-bug-puppet-44s6SAe8q4X8A',
 			},
 		],
 	},
