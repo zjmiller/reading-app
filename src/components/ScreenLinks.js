@@ -8,16 +8,16 @@ class ScreenLinks extends Component {
   render() {
     return (
       <div
-				style={{
-					display: 'flex',
-					left: '10px',
-					position: 'fixed',
-					top: '10px',
-					zIndex: 3,
-				}}
-			>
-				<BackBtn />
-				<div style={{ width: '7px' }} />
+        style={{
+          display: 'flex',
+          left: '10px',
+          position: 'fixed',
+          top: '10px',
+          zIndex: 3,
+        }}
+      >
+        <BackBtn />
+        <div style={{ width: '7px' }} />
         <StoreLink />
       </div>
     );
@@ -25,9 +25,7 @@ class ScreenLinks extends Component {
 }
 
 const mapStateToProps = state => {
-  return {
-
-  };
+  return {};
 };
 
 export default connect(mapStateToProps)(ScreenLinks);

@@ -5,31 +5,30 @@ import getCurrentEngagement from '../selectors/getCurrentEngagement';
 
 class EngagementBackground extends Component {
   render() {
-		const { backgroundImageSrc } = this.props;
-		
+    const { backgroundImageSrc } = this.props;
+
     return (
       <div
-				style={{
-					backgroundImage: `url(${backgroundImageSrc})`,
-  				backgroundSize: 'cover',
-					position: 'fixed',
-						bottom: 0,
-						left: 0,
-						right: 0,
-						top: 0,
-					zIndex: 1,
-				}}
-			>
-      </div>
+        style={{
+          backgroundImage: `url(${backgroundImageSrc})`,
+          backgroundSize: 'cover',
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          top: 0,
+          zIndex: 1,
+        }}
+      />
     );
   }
 }
 
 const mapStateToProps = state => {
-	const engagement = getCurrentEngagement(state);
-	
+  const engagement = getCurrentEngagement(state);
+
   return {
-		backgroundImageSrc: engagement.backgroundImageSrc,
+    backgroundImageSrc: engagement.backgroundImageSrc,
   };
 };
 

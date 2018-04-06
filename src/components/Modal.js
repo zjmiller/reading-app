@@ -10,60 +10,55 @@ import Chest from './Chest';
 import RewardCards from './RewardCards';
 
 class SuccessModal extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			cardWidth: !this.props.receivingRewardState === 'CHEST_OPENED' ? 0 : 180,
-			testFlipped: false,
-		};
-	}
-	
-	componentWillReceiveProps(nextProps) {
-		if (nextProps.receivingRewardState === 'CHEST_OPENED' && this.props.receivingRewardState !== nextProps.receivingRewardState) {
-			setTimeout(() => this.setState({cardWidth: 180}), 10);
-		}
-	}
-	
-	handleHideRewardModal = () => {
-		if (this.props.areAllRewardCardsRevealed) {
-			this.props.handleCloseRewardModal();
-			this.setState({
-				cardWidth: 0,
-			});
-		}
-	}
-	
+  constructor(props) {
+    super(props);
+    this.state = {
+      cardWidth: !this.props.receivingRewardState === 'CHEST_OPENED' ? 0 : 180,
+      testFlipped: false,
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (
+      nextProps.receivingRewardState === 'CHEST_OPENED' &&
+      this.props.receivingRewardState !== nextProps.receivingRewardState
+    ) {
+      setTimeout(() => this.setState({ cardWidth: 180 }), 10);
+    }
+  }
+
+  handleHideRewardModal = () => {
+    if (this.props.areAllRewardCardsRevealed) {
+      this.props.handleCloseRewardModal();
+      this.setState({
+        cardWidth: 0,
+      });
+    }
+  };
+
   render() {
-		const {
-			isReceivingReward,
-			receivingRewardState,
-		} = this.props;
-		
+    const { isReceivingReward, receivingRewardState } = this.props;
+
     return (
       <div>
-				<Modal show={isReceivingReward} onHide={this.handleHideRewardModal}>
-					<Modal.Body 
-						style={{
-							alignItems: 'center',
-							backgroundImage: `url(${backgroundImageSrc})`,
-							backgroundSize: 'cover',
-							borderRadius: '5px',
-							display: 'flex',
-							height: '410px',
-							justifyContent: 'center',
-						}}>
-						{
-							receivingRewardState === 'CHEST_APPEARING'
-							&&
-							<Chest />
-						}
-						{
-							receivingRewardState === 'CHEST_OPENED'
-							&&
-							<RewardCards cardWidth={this.state.cardWidth} />
-						}
-					</Modal.Body>
-				</Modal>
+        <Modal show={isReceivingReward} onHide={this.handleHideRewardModal}>
+          <Modal.Body
+            style={{
+              alignItems: 'center',
+              backgroundImage: `url(${backgroundImageSrc})`,
+              backgroundSize: 'cover',
+              borderRadius: '5px',
+              display: 'flex',
+              height: '410px',
+              justifyContent: 'center',
+            }}
+          >
+            {receivingRewardState === 'CHEST_APPEARING' && <Chest />}
+            {receivingRewardState === 'CHEST_OPENED' && (
+              <RewardCards cardWidth={this.state.cardWidth} />
+            )}
+          </Modal.Body>
+        </Modal>
       </div>
     );
   }
@@ -71,9 +66,9 @@ class SuccessModal extends Component {
 
 const mapStateToProps = state => {
   return {
-		areAllRewardCardsRevealed: areAllRewardCardsRevealed(state),
-		isReceivingReward: state.session.engagementState === 'RECEIVING_REWARD',	
-		receivingRewardState: state.session.receivingRewardState,
+    areAllRewardCardsRevealed: areAllRewardCardsRevealed(state),
+    isReceivingReward: state.session.engagementState === 'RECEIVING_REWARD',
+    receivingRewardState: state.session.receivingRewardState,
   };
 };
 

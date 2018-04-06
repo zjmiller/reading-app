@@ -8,11 +8,11 @@ import session from './session';
 import words from './words';
 
 export default combineReducers({
-	chests,
-	engagements,
-	items,
-	letters,
-	rewardCards,
-	session,
-	words,
+  chests,
+  engagements,
+  items,
+  letters,
+  rewardCards,
+  session,
+  words,
 });

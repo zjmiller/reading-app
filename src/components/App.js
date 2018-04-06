@@ -12,49 +12,50 @@ import createAndEnterEngagement from '../actions/createAndEnterEngagement';
 import handleLetterDrop from '../actions/handleLetterDrop';
 
 class App extends Component {
-	componentDidMount() {
-		if (!this.props.currentlyInEngagement) this.props.handleCreateAndEnterEngagement();
-	}
-	
+  componentDidMount() {
+    if (!this.props.currentlyInEngagement)
+      this.props.handleCreateAndEnterEngagement();
+  }
+
   render() {
-		const {
-			onEngagementScreen,
-			onStoreScreen,
-			onDragEndHandleLetterDrop,
-		} = this.props;
-		
+    const {
+      onEngagementScreen,
+      onStoreScreen,
+      onDragEndHandleLetterDrop,
+    } = this.props;
+
     return (
-			<DragDropContext onDragEnd={result => onDragEndHandleLetterDrop(result)}>
-	      <div
-					style={{
-						overflow: 'hidden',
-						paddingTop: '15px',
-						width: '100%',
-					}}
-				>
-					<ScreenLinks />
-					<Wealth />
-					{onEngagementScreen && <Engagement />}
-					{onStoreScreen && <Store />}
-	      </div>
-				<AnswerModal />
-			</DragDropContext>
+      <DragDropContext onDragEnd={result => onDragEndHandleLetterDrop(result)}>
+        <div
+          style={{
+            overflow: 'hidden',
+            paddingTop: '15px',
+            width: '100%',
+          }}
+        >
+          <ScreenLinks />
+          <Wealth />
+          {onEngagementScreen && <Engagement />}
+          {onStoreScreen && <Store />}
+        </div>
+        <AnswerModal />
+      </DragDropContext>
     );
   }
 }
 
 const mapStateToProps = state => ({
-	currentlyInEngagement: state.session.inEngagement,
-	onEngagementScreen: state.session.currentScreen === 'ENGAGEMENT',
-	onStoreScreen: state.session.currentScreen === 'STORE',
+  currentlyInEngagement: state.session.inEngagement,
+  onEngagementScreen: state.session.currentScreen === 'ENGAGEMENT',
+  onStoreScreen: state.session.currentScreen === 'STORE',
 });
 
 const mapDispatchToProps = dispatch => ({
   handleCreateAndEnterEngagement: () => dispatch(createAndEnterEngagement()),
-	onDragEndHandleLetterDrop: result => {
-	 	if (!result.destination) return; // dropped outside droppable
-		dispatch(handleLetterDrop(result))
-	},
+  onDragEndHandleLetterDrop: result => {
+    if (!result.destination) return; // dropped outside droppable
+    dispatch(handleLetterDrop(result));
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

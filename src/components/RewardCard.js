@@ -10,100 +10,93 @@ import greenGemImgSrc from '../assets/images/gemGreen.png';
 import redGemImgSrc from '../assets/images/gemRed.png';
 
 class RewardCard extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			isFlipped: false,
-		}
-	}
-	
+  constructor(props) {
+    super(props);
+    this.state = {
+      isFlipped: false,
+    };
+  }
+
   render() {
-		
-		const {
-			handleRevealRewardCard,
-			rewardCard,
-		} = this.props;
-		
-		const {
-			isPremium,
-			quantity,
-			rewardType,
-		} = rewardCard;
-		
-		const rewardCardId = rewardCard.id;
-		
-		const imgSrc = function(){
-			if (rewardType === 'GOLD_COIN') return coinImgSrc;
-			if (rewardType === 'BLUE_GEM') return blueGemImgSrc;
-			if (rewardType === 'GREEN_GEM') return greenGemImgSrc;
-			if (rewardType === 'RED_GEM') return redGemImgSrc;
-		}();
-		
+    const { handleRevealRewardCard, rewardCard } = this.props;
+
+    const { isPremium, quantity, rewardType } = rewardCard;
+
+    const rewardCardId = rewardCard.id;
+
+    const imgSrc = (function() {
+      if (rewardType === 'GOLD_COIN') return coinImgSrc;
+      if (rewardType === 'BLUE_GEM') return blueGemImgSrc;
+      if (rewardType === 'GREEN_GEM') return greenGemImgSrc;
+      if (rewardType === 'RED_GEM') return redGemImgSrc;
+    })();
+
     return (
-			<div className={this.state.isFlipped ? 'flipcard is-flipped' : 'flipcard'}>
-				<div className="flipcard--front">
-					<img
-						alt="Back of Card"
-						className={isPremium ? 'premium-cardback' : ''}
-						onClick={() => {
-							handleRevealRewardCard(rewardCardId);
-							this.setState({ isFlipped: true });
-						}}
-						src={cardBackImgSrc}
-						style={{
-							border: '2px solid #333',
-							borderRadius: '8px',
-							boxShadow: '0px 0px 5px #333',
-							cursor: 'pointer',
-							height: `${217*(this.props.cardWidth/180)}px`,
-							marginLeft: '20px',
-							marginRight: '20px',
-							transition: 'height 0.4s cubic-bezier(1,.46,.41,1.46), width 0.4s cubic-bezier(1,.46,.41,1.46)',
-							width: `${this.props.cardWidth}px`,
-						}} 
-					/>
-				</div>
-				<div
-					className="flipcard--back"
-					style={{
-						alignItems: 'center',
-						backgroundColor: '#f5f5dc',
-						border: '2px solid #333',
-						borderRadius: '8px',
-						boxShadow: '0px 0px 5px #333',
-						display: 'flex',
-						flexDirection: 'column',
-						marginLeft: '20px',
-						marginRight: '20px',
-						height: `${217*(this.props.cardWidth/180)}px`,
-						justifyContent: 'center',
-						width: `${this.props.cardWidth}px`,
-					}}
-				>
-				
-					<span
-						style={{
-							fontFamily: 'Georgia',
-							fontSize: '36px'
-						}}
-					>
-						{ quantity }
-					</span>
-					<img alt="Card Reward" src={imgSrc} />
-				</div>
-			</div>
+      <div
+        className={this.state.isFlipped ? 'flipcard is-flipped' : 'flipcard'}
+      >
+        <div className="flipcard--front">
+          <img
+            alt="Back of Card"
+            className={isPremium ? 'premium-cardback' : ''}
+            onClick={() => {
+              handleRevealRewardCard(rewardCardId);
+              this.setState({ isFlipped: true });
+            }}
+            src={cardBackImgSrc}
+            style={{
+              border: '2px solid #333',
+              borderRadius: '8px',
+              boxShadow: '0px 0px 5px #333',
+              cursor: 'pointer',
+              height: `${217 * (this.props.cardWidth / 180)}px`,
+              marginLeft: '20px',
+              marginRight: '20px',
+              transition:
+                'height 0.4s cubic-bezier(1,.46,.41,1.46), width 0.4s cubic-bezier(1,.46,.41,1.46)',
+              width: `${this.props.cardWidth}px`,
+            }}
+          />
+        </div>
+        <div
+          className="flipcard--back"
+          style={{
+            alignItems: 'center',
+            backgroundColor: '#f5f5dc',
+            border: '2px solid #333',
+            borderRadius: '8px',
+            boxShadow: '0px 0px 5px #333',
+            display: 'flex',
+            flexDirection: 'column',
+            marginLeft: '20px',
+            marginRight: '20px',
+            height: `${217 * (this.props.cardWidth / 180)}px`,
+            justifyContent: 'center',
+            width: `${this.props.cardWidth}px`,
+          }}
+        >
+          <span
+            style={{
+              fontFamily: 'Georgia',
+              fontSize: '36px',
+            }}
+          >
+            {quantity}
+          </span>
+          <img alt="Card Reward" src={imgSrc} />
+        </div>
+      </div>
     );
   }
 }
 
 const mapStateToProps = state => {
-  return {
-
-  };
+  return {};
 };
 
 const mapDispatchToProps = dispatch => ({
-  handleRevealRewardCard: rewardCardId => dispatch(revealRewardCard(rewardCardId)),
+  handleRevealRewardCard: rewardCardId =>
+    dispatch(revealRewardCard(rewardCardId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RewardCard);
