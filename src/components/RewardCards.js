@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
-import RewardCard from './RewardCard';
-import getCurrentEngagement from '../selectors/getCurrentEngagement';
+import RewardCard from "./RewardCard";
+import getCurrentEngagement from "../selectors/getCurrentEngagement";
 
 class RewardCards extends Component {
   render() {
@@ -11,14 +11,14 @@ class RewardCards extends Component {
     return (
       <div
         style={{
-          alignItems: 'center',
-          display: 'flex',
-          height: '410px',
-          justifyContent: 'center',
+          alignItems: "center",
+          display: "flex",
+          height: "410px",
+          justifyContent: "center",
         }}
       >
         {[
-          rewardCards.map(rewardCard => (
+          rewardCards.map((rewardCard) => (
             <RewardCard
               cardWidth={this.props.cardWidth}
               key={rewardCard.id}
@@ -31,14 +31,18 @@ class RewardCards extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   const currentEngagement = getCurrentEngagement(state);
+
   const chest = state.chests.find(
-    chest => chest.id === currentEngagement.chestId
+    (chest) => chest.id === currentEngagement.chestId
   );
-  const rewardCards = chest.rewardCards.map(rewardCardId =>
-    state.rewardCards.find(rewardCard => rewardCard.id === rewardCardId)
-  );
+
+  const rewardCards = chest
+    ? chest.rewardCards.map((rewardCardId) =>
+        state.rewardCards.find((rewardCard) => rewardCard.id === rewardCardId)
+      )
+    : [];
 
   return {
     rewardCards,
